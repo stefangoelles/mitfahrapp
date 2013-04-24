@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_x="113dp"
+        android:layout_y="370dp"
+        android:text="SEARCH" />
+
+    <TextView
+        android:id="@+id/lbl_von"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_x="22dp"
+        android:layout_y="37dp"
+        android:text="Von:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_nach"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_x="22dp"
+        android:layout_y="83dp"
+        android:text="Nach:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_datum"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_x="24dp"
+        android:layout_y="140dp"
+        android:text="Datum:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/txt_von"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_x="147dp"
+        android:layout_y="28dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txt_nach"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_x="149dp"
+        android:layout_y="74dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/txt_date"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_x="154dp"
+        android:layout_y="130dp"
+        android:ems="10"
+        android:text="DD.MM.JJ" />
+
+</AbsoluteLayout>
