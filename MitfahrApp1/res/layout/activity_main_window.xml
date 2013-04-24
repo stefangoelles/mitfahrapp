@@ -34,4 +34,14 @@
         android:layout_marginLeft="15dp"
         android:text="Mitfahren" />
 
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="26dp"
+        android:layout_marginRight="24dp"
+        android:src="@android:drawable/ic_dialog_info" />
+
 </RelativeLayout>
