@@ -22,14 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity 
-            android:name= "activity_trip"
-            android:label = "activity_trip">
-            
-            
+        <activity
+            android:name="com.mitfahr.activity_trip"
+            android:label="activity_trip" >
         </activity>
-        
+        <activity
+            android:name="com.mitfahr.ActivityTrip"
+            android:label="@string/title_activity_activity_trip" >
+        </activity>
     </application>
 
 </manifest>
