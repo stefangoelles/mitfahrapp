@@ -21,10 +21,10 @@ public class MainWindow extends Activity {
 		    {
 		      public void onClick(View v)
 		      {
-		    	  //Intent inte = new Intent(MainWindow.this, ClassTrip.class);
-		    	  //MainWindow.this.startActivity(inte);
-		    	  setContentView(R.layout.activity_trip);
-		    	  
+		    	 Intent inte = new Intent(MainWindow.this, ActivityTrip.class);
+		    	  MainWindow.this.startActivity(inte);
+		    	 // setContentView(R.layout.activity_trip);
+		    	 
 		    	  
 		    	  
 		      }
