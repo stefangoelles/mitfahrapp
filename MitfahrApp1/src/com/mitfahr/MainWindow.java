@@ -15,18 +15,34 @@ public class MainWindow extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_window);
 		
-		 Button button = (Button) findViewById(R.id.btn_trip);
+		 Button button_trip = (Button) findViewById(R.id.btn_trip);
+		 Button button_ride = (Button) findViewById(R.id.btn_ride);
+		 Button button_ownrides = (Button) findViewById(R.id.btn_ownrides);
 		
-		 button.setOnClickListener(new OnClickListener()
+		 button_trip.setOnClickListener(new OnClickListener()
 		    {
 		      public void onClick(View v)
 		      {
 		    	 Intent inte = new Intent(MainWindow.this, ActivityTrip.class);
 		    	  MainWindow.this.startActivity(inte);
-		    	 // setContentView(R.layout.activity_trip);
-		    	 
-		    	  
-		    	  
+		      }
+		    });
+		 
+		 button_ride.setOnClickListener(new OnClickListener()
+		    {
+		      public void onClick(View v)
+		      {
+		    	 Intent inte = new Intent(MainWindow.this, ActivityRide.class);
+		    	  MainWindow.this.startActivity(inte);
+		      }
+		    });
+		 
+		 button_ownrides.setOnClickListener(new OnClickListener()
+		    {
+		      public void onClick(View v)
+		      {
+		    	 Intent inte = new Intent(MainWindow.this, ActivityOwnrides.class);
+		    	  MainWindow.this.startActivity(inte);
 		      }
 		    });
 	}
@@ -37,11 +53,6 @@ public class MainWindow extends Activity {
 		getMenuInflater().inflate(R.menu.main_window, menu);
 		return true;
 	}
-	
-	
-	
-	
-	
 	
 
 }

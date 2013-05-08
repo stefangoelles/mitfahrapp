@@ -25,34 +25,48 @@ public final class R {
         public static final int image=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000e;
-        public static final int activity_trip=0x7f080006;
+        public static final int action_settings=0x7f080015;
+        public static final int activity_trip=0x7f08000b;
         public static final int btn_info=0x7f080001;
         public static final int btn_ownrides=0x7f080000;
         public static final int btn_ride=0x7f080002;
         public static final int btn_trip=0x7f080003;
+        public static final int btn_weiter=0x7f080013;
         public static final int fld_welcome=0x7f080005;
         public static final int fld_welcome_vertikal=0x7f080004;
-        public static final int txt_beschreibung=0x7f08000c;
-        public static final int txt_bis=0x7f080008;
-        public static final int txt_date=0x7f080009;
-        public static final int txt_sitze=0x7f08000d;
-        public static final int txt_size=0x7f08000b;
-        public static final int txt_time=0x7f08000a;
-        public static final int txt_von=0x7f080007;
+        public static final int list_ride=0x7f08000a;
+        public static final int text1=0x7f080014;
+        public static final int txt_beschreibung=0x7f08000e;
+        public static final int txt_bis=0x7f08000d;
+        public static final int txt_date=0x7f08000c;
+        public static final int txt_ride_bis=0x7f080007;
+        public static final int txt_ride_date=0x7f080008;
+        public static final int txt_ride_time=0x7f080009;
+        public static final int txt_ride_von=0x7f080006;
+        public static final int txt_size=0x7f08000f;
+        public static final int txt_time=0x7f080010;
+        public static final int txt_trip_bis=0x7f080012;
+        public static final int txt_trip_von=0x7f080011;
     }
     public static final class layout {
         public static final int activity_main_window=0x7f030000;
-        public static final int activity_trip=0x7f030001;
+        public static final int activity_ownrides=0x7f030001;
+        public static final int activity_ride=0x7f030002;
+        public static final int activity_trip=0x7f030003;
+        public static final int custom_list_view=0x7f030004;
     }
     public static final class menu {
-        public static final int activity_trip=0x7f070000;
-        public static final int main_window=0x7f070001;
+        public static final int activity_ownrides=0x7f070000;
+        public static final int activity_ride=0x7f070001;
+        public static final int activity_trip=0x7f070002;
+        public static final int main_window=0x7f070003;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050002;
+        public static final int title_activity_activity_ownrides=0x7f050005;
+        public static final int title_activity_activity_ride=0x7f050004;
         public static final int title_activity_activity_trip=0x7f050003;
     }
     public static final class style {
@@ -77,10 +91,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f060001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f060002;
+        public static final int ListFont=0x7f060000;
     }
 }
