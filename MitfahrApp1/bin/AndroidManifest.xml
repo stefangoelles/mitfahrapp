@@ -31,13 +31,17 @@
             android:label="@string/title_activity_activity_trip" >
         </activity>
         <activity
-            android:name="com.mitfahr.ActivityRide" android:theme="@style/ListFont"
-            android:label="@string/title_activity_activity_ride" >
-            
+            android:name="com.mitfahr.ActivityRide"
+            android:label="@string/title_activity_activity_ride"
+            android:theme="@style/ListFont" >
         </activity>
         <activity
             android:name="com.mitfahr.ActivityOwnrides"
             android:label="@string/title_activity_activity_ownrides" >
+        </activity>
+        <activity
+            android:name="com.mitfahr.ActivityCheckInput"
+            android:label="@string/title_activity_activity_check_input" >
         </activity>
     </application>
 
