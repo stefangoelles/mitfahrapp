@@ -43,6 +43,7 @@ public class MainWindow extends Activity {
 		      {
 		    	 Intent inte = new Intent(MainWindow.this, ActivityOwnrides.class);
 		    	  MainWindow.this.startActivity(inte);
+		    	  finish();
 		      }
 		    });
 	}
