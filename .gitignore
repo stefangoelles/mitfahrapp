@@ -1,0 +1,7 @@
+# all folders which will hopefully be ignored
+MitfahrApp1/assets
+MitfahrApp1/bin
+MitfahrApp1/gen
+MitfahrApp1/libs
+MitfahrApp1/.settings
+
