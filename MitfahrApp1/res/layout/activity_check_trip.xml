@@ -9,8 +9,73 @@
     tools:context=".ActivityCheckTrip" >
 
     <TextView
+        android:id="@+id/lbl_check_trip_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_check_trip_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lbl_check_trip_from"
+        android:layout_below="@+id/lbl_check_trip_from"
+        android:layout_marginTop="30dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_check_trip_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lbl_check_trip_to"
+        android:layout_below="@+id/lbl_check_trip_to"
+        android:layout_marginTop="25dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_check_trip_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lbl_check_trip_date"
+        android:layout_centerVertical="true"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_check_trip_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_check_trip_time"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_check_trip_seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lbl_check_trip_time"
+        android:layout_below="@+id/lbl_check_trip_time"
+        android:layout_marginTop="31dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btn_check_trip_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="43dp"
+        android:layout_toRightOf="@+id/lbl_check_trip_desc"
+        android:text="Button" />
 
 </RelativeLayout>
