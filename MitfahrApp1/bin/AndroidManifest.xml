@@ -5,13 +5,6 @@
     android:versionName="1.0" >
     
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    
-<<<<<<< .merge_file_7zBsxA
-
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
-=======
->>>>>>> .merge_file_JmlXPA
 
     <uses-sdk
         android:minSdkVersion="8"

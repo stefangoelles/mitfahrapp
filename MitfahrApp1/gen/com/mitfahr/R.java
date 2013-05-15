@@ -60,8 +60,6 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_agb=0x7f030000;
-<<<<<<< .merge_file_CjqlT8
-<<<<<<< .merge_file_pTNEB1
         public static final int activity_check_trip=0x7f030001;
         public static final int activity_impressum=0x7f030002;
         public static final int activity_main_window=0x7f030003;
@@ -83,42 +81,6 @@ public final class R {
         public static final int activity_trip=0x7f070007;
         public static final int impressum=0x7f070008;
         public static final int main_window=0x7f070009;
-=======
-        public static final int activity_impressum=0x7f030001;
-        public static final int activity_main_window=0x7f030002;
-        public static final int activity_own_trips=0x7f030003;
-        public static final int activity_ownrides=0x7f030004;
-        public static final int activity_ride=0x7f030005;
-        public static final int activity_trip=0x7f030006;
-        public static final int custom_list_view=0x7f030007;
-        public static final int viewlist_adapter_ownrides=0x7f030008;
-    }
-    public static final class menu {
-        public static final int activity_agb=0x7f070000;
-=======
-        public static final int activity_impressum=0x7f030001;
-        public static final int activity_main_window=0x7f030002;
-        public static final int activity_own_trips=0x7f030003;
-        public static final int activity_ownrides=0x7f030004;
-        public static final int activity_ride=0x7f030005;
-        public static final int activity_trip=0x7f030006;
-        public static final int custom_list_view=0x7f030007;
-        public static final int viewlist_adapter_ownrides=0x7f030008;
-    }
-    public static final class menu {
-        public static final int activity_agb=0x7f070000;
->>>>>>> .merge_file_8I1K37
-        public static final int activity_impressum=0x7f070001;
-        public static final int activity_own_trips=0x7f070002;
-        public static final int activity_ownrides=0x7f070003;
-        public static final int activity_ride=0x7f070004;
-        public static final int activity_trip=0x7f070005;
-        public static final int impressum=0x7f070006;
-        public static final int main_window=0x7f070007;
-<<<<<<< .merge_file_CjqlT8
->>>>>>> .merge_file_LlNm52
-=======
->>>>>>> .merge_file_8I1K37
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
