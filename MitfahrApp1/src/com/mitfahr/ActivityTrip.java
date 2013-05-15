@@ -35,7 +35,8 @@ public class ActivityTrip extends Activity {
 	      public void onClick(View v)
 	      {
 	    	 Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
-	    	 try{
+	    	 try
+	    	 {
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = m_edit_from.getText().toString();
 	    	 
@@ -79,9 +80,10 @@ public class ActivityTrip extends Activity {
 	    	}
 	    	  
 	    	}
-	    	 catch(Exception E){
+	    	catch(Exception E)
+	    	{
 	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
-	          }
+	        }
 	    	 
 	    	 //ActivityTrip.this.startActivity(inte);
 	      }
