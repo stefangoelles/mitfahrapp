@@ -34,8 +34,7 @@ public class ActivityTrip extends Activity {
 	    {
 	      public void onClick(View v)
 	      {
-<<<<<<< .merge_file_IA5f6b
-<<<<<<< .merge_file_3HtkG4
+
 	    	 Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
 	    	 try{
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
@@ -84,17 +83,11 @@ public class ActivityTrip extends Activity {
 	    	 catch(Exception E){
 	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
 	          }
-=======
+
 	    	  
 	    	  try{
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
-=======
-	    	  
-	    	  try{
-	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
-	    	 
->>>>>>> .merge_file_ENdopc
 	    	  final EditText edit_text_von = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = edit_text_von.getText().toString();
 	    	  final EditText edit_text_bis = (EditText) findViewById(R.id.txt_bis);
@@ -122,9 +115,6 @@ public class ActivityTrip extends Activity {
 	    	  
 	    	  
 	    	 Toast.makeText(getApplicationContext(),to, Toast.LENGTH_LONG).show();
->>>>>>> .merge_file_9pJ634
-	    	 
-	    	 //ActivityTrip.this.startActivity(inte);
 	    	 
 	    	  }
 	    	  
