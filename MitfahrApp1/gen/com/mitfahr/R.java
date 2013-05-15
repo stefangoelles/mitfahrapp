@@ -60,7 +60,10 @@ public final class R {
         public static final int activity_ride=0x7f030005;
         public static final int activity_trip=0x7f030006;
         public static final int custom_list_view=0x7f030007;
+<<<<<<< HEAD
         public static final int viewlist_adapter_ownrides=0x7f030008;
+=======
+>>>>>>> 08df8756b0d706a7e648cc0f5f9a615932c68c48
     }
     public static final class menu {
         public static final int activity_agb=0x7f070000;

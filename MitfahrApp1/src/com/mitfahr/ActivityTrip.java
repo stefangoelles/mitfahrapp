@@ -1,6 +1,15 @@
 package com.mitfahr;
 
+<<<<<<< HEAD
 import com.mitfahr.R.layout;
+=======
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.mitfahr.database.Fahrt;
+import com.mitfahr.database.FahrtenModel;
+>>>>>>> 08df8756b0d706a7e648cc0f5f9a615932c68c48
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -38,6 +47,7 @@ public class ActivityTrip extends Activity {
 	    	  try{
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
+<<<<<<< HEAD
 	    	  final EditText edit_text_von = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = edit_text_von.getText().toString();
 	    	  final EditText edit_text_bis = (EditText) findViewById(R.id.txt_bis);
@@ -66,6 +76,14 @@ public class ActivityTrip extends Activity {
 	    	  
 	    	 Toast.makeText(getApplicationContext(),to, Toast.LENGTH_LONG).show();
 	    	 
+=======
+	    	 
+	    	 m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
+	    	 from = m_edit_text.getText().toString();
+	    	 Toast.makeText(getApplicationContext(), from, Toast.LENGTH_LONG).show();
+
+		    	
+>>>>>>> 08df8756b0d706a7e648cc0f5f9a615932c68c48
 	    	 //ActivityTrip.this.startActivity(inte);
 	    	 
 	    	  }
