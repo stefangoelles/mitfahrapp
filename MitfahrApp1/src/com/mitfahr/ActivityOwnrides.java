@@ -39,12 +39,8 @@ public class ActivityOwnrides extends Activity {
 
 		try {
 
-			// TODO(1) Ist der Timeout notwendig? sonst löschen.
-			HttpParams httpParameters = new BasicHttpParams();
-			HttpConnectionParams.setConnectionTimeout(httpParameters,
-					TIMEOUT_MILLISEC);
-			HttpConnectionParams.setSoTimeout(httpParameters, TIMEOUT_MILLISEC);
-			HttpClient httpclient = new DefaultHttpClient(httpParameters);
+
+			HttpClient httpclient = new DefaultHttpClient();
 			// HttpClient httpclient = new DefaultHttpClient(); //FALLS TODO(1)
 
 			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test"; 

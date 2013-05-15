@@ -1,5 +1,7 @@
 package com.mitfahr;
 
+import com.mitfahr.R.layout;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +21,6 @@ public class ActivityTrip extends Activity {
 	private String time;
 	private Integer seats;
 	private String desc;
-	private EditText m_edit_text;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +36,18 @@ public class ActivityTrip extends Activity {
 	      {
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
-	    	 m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
-	    	 from = m_edit_text.getText().toString();
+	    	  final EditText m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
+	    	  from = m_edit_text.getText().toString();
+	    	  final EditText n_edit_text = (EditText) findViewById(R.id.txt_bis);
+	    	  to = n_edit_text.getText().toString();
 	    	 
-	    	 Toast.makeText(getApplicationContext(), from, Toast.LENGTH_LONG).show();
+	    	 Toast.makeText(getApplicationContext(),to, Toast.LENGTH_LONG).show();
 	    	 
 	    	 //ActivityTrip.this.startActivity(inte);
 	      }
 	    });
+		
+	 
 	}
 
 	@Override
@@ -51,5 +56,6 @@ public class ActivityTrip extends Activity {
 		getMenuInflater().inflate(R.menu.activity_trip, menu);
 		return true;
 	}
+	
 
 }
