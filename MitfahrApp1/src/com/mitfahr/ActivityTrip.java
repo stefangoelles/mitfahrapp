@@ -34,6 +34,7 @@ public class ActivityTrip extends Activity {
 	    {
 	      public void onClick(View v)
 	      {
+<<<<<<< .merge_file_IA5f6b
 <<<<<<< .merge_file_3HtkG4
 	    	 Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
 	    	 try{
@@ -88,6 +89,12 @@ public class ActivityTrip extends Activity {
 	    	  try{
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
+=======
+	    	  
+	    	  try{
+	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
+	    	 
+>>>>>>> .merge_file_ENdopc
 	    	  final EditText edit_text_von = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = edit_text_von.getText().toString();
 	    	  final EditText edit_text_bis = (EditText) findViewById(R.id.txt_bis);
