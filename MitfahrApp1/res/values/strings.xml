@@ -8,5 +8,7 @@
     <string name="title_activity_activity_ride">ActivityRide</string>
     <string name="title_activity_activity_ownrides">ActivityOwnrides</string>
     <string name="title_activity_activity_check_input">ActivityCheckInput</string>
+    <string name="title_activity_activity_ceck_trip">ActivityCeckTrip</string>
+    <string name="title_activity_activity_check_trip">ActivityCheckTrip</string>
 
 </resources>
