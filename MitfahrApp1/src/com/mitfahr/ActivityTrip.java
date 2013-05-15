@@ -1,5 +1,12 @@
 package com.mitfahr;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.mitfahr.database.Fahrt;
+import com.mitfahr.database.FahrtenModel;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -35,11 +42,12 @@ public class ActivityTrip extends Activity {
 	      {
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
+	    	 
 	    	 m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
 	    	 from = m_edit_text.getText().toString();
-	    	 
 	    	 Toast.makeText(getApplicationContext(), from, Toast.LENGTH_LONG).show();
-	    	 
+
+		    	
 	    	 //ActivityTrip.this.startActivity(inte);
 	      }
 	    });
