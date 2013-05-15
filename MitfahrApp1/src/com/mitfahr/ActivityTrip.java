@@ -34,16 +34,45 @@ public class ActivityTrip extends Activity {
 	    {
 	      public void onClick(View v)
 	      {
+	    	  
+	    	  try{
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
 	    	 
-	    	  final EditText m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
-	    	  from = m_edit_text.getText().toString();
-	    	  final EditText n_edit_text = (EditText) findViewById(R.id.txt_bis);
-	    	  to = n_edit_text.getText().toString();
-	    	 
+	    	  final EditText edit_text_von = (EditText) findViewById(R.id.txt_trip_von);
+	    	  from = edit_text_von.getText().toString();
+	    	  final EditText edit_text_bis = (EditText) findViewById(R.id.txt_bis);
+	    	  to = edit_text_bis.getText().toString();
+	    	
+	    	  final EditText edit_text_date = (EditText) findViewById(R.id.txt_date);
+	    	  date = edit_text_date.getText().toString();
+	    	  
+	    	  final EditText edit_text_time= (EditText) findViewById(R.id.txt_time);
+	    	  time = edit_text_time.getText().toString();
+	    	  
+	    	  final EditText edit_text_seats = (EditText) findViewById(R.id.txt_size);
+	    	  seats = Integer.parseInt(edit_text_seats.getText().toString());
+	    	  
+	    	  final EditText edit_text_desc = (EditText) findViewById(R.id.txt_beschreibung);
+	    	  desc = edit_text_desc.getText().toString();
+	    	  
+	    	  Log.d("DebugActivityTrip_von: ", from);
+	    	  Log.d("DebugActivityTrip_bis: ", to);
+	    	  Log.d("DebugActivityTrip_date: ", date);
+	    	  Log.d("DebugActivityTrip_time: ", time);
+	    	  Log.d("DebugActivityTrip_seats: ", seats.toString());
+	    	  Log.d("DebugActivityTrip_desc: ", desc);
+	    	  
+	    	  
+	    	  
 	    	 Toast.makeText(getApplicationContext(),to, Toast.LENGTH_LONG).show();
 	    	 
 	    	 //ActivityTrip.this.startActivity(inte);
+	    	 
+	    	  }
+	    	  
+	    	  catch(Exception E){
+	              Toast.makeText(v.getContext(),E.toString(), Toast.LENGTH_SHORT).show();
+	          }
 	      }
 	    });
 		
