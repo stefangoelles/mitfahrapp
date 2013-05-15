@@ -34,7 +34,7 @@ public class ActivityTrip extends Activity {
 	    {
 	      public void onClick(View v)
 	      {
-	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
+	    	 Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
 	    	 try{
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = m_edit_from.getText().toString();
@@ -66,7 +66,17 @@ public class ActivityTrip extends Activity {
 	    	{
 	    		Toast.makeText(v.getContext(),"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT).show();
 	    	}
-	    	  
+	    	else
+	    	{
+	    		inte.putExtra("from", from);
+	    		inte.putExtra("to", to);
+	    		inte.putExtra("date", date);
+	    		inte.putExtra("time", time);
+	    		inte.putExtra("seats", seats.toString());
+	    		inte.putExtra("desc", desc);
+	    		
+	    		ActivityTrip.this.startActivity(inte);
+	    	}
 	    	  
 	    	}
 	    	 catch(Exception E){
@@ -86,6 +96,8 @@ public class ActivityTrip extends Activity {
 		getMenuInflater().inflate(R.menu.activity_trip, menu);
 		return true;
 	}
+
+	
 	
 
 }

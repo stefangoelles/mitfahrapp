@@ -3,9 +3,9 @@
     package="com.mitfahr"
     android:versionCode="1"
     android:versionName="1.0" >
-    
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -45,6 +45,14 @@
         <activity
             android:name="com.mitfahr.ActivityCheckInput"
             android:label="@string/title_activity_activity_check_input" >
+        </activity>
+        <activity
+            android:name="com.mitfahr.ActivityCeckTrip"
+            android:label="@string/title_activity_activity_ceck_trip" >
+        </activity>
+        <activity
+            android:name="com.mitfahr.ActivityCheckTrip"
+            android:label="@string/title_activity_activity_check_trip" >
         </activity>
     </application>
 
