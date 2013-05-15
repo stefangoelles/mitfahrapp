@@ -3,9 +3,14 @@
     package="com.mitfahr"
     android:versionCode="1"
     android:versionName="1.0" >
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" >
     </uses-permission>
+=======
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+>>>>>>> b1d32c6e345cad6b3d11581e3368ef138ddd6335
 
     <uses-sdk
         android:minSdkVersion="8"
