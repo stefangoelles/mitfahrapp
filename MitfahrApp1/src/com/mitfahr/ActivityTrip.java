@@ -35,13 +35,43 @@ public class ActivityTrip extends Activity {
 	      public void onClick(View v)
 	      {
 	    	 //Intent inte = new Intent(ActivityTrip.this, ActivityCheckInput.class);
+	    	 try{
+	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
+	    	  from = m_edit_from.getText().toString();
 	    	 
-	    	  final EditText m_edit_text = (EditText) findViewById(R.id.txt_trip_von);
-	    	  from = m_edit_text.getText().toString();
-	    	  final EditText n_edit_text = (EditText) findViewById(R.id.txt_bis);
-	    	  to = n_edit_text.getText().toString();
+	    	  final EditText m_edit_to = (EditText) findViewById(R.id.txt_bis);
+	    	  to = m_edit_to.getText().toString();
 	    	 
-	    	 Toast.makeText(getApplicationContext(),to, Toast.LENGTH_LONG).show();
+	    	  final EditText m_edit_date = (EditText) findViewById(R.id.txt_date);
+	    	  date = m_edit_date.getText().toString();
+	    	  
+	    	  final EditText m_edit_time = (EditText) findViewById(R.id.txt_time);
+	    	  time = m_edit_time.getText().toString();
+	    	  
+	    	  final EditText m_edit_seats = (EditText) findViewById(R.id.txt_size);
+	    	  seats = Integer.parseInt(m_edit_seats.getText().toString());
+	    	  
+	    	  final EditText m_edit_desc = (EditText) findViewById(R.id.txt_beschreibung);
+	    	  desc = m_edit_desc.getText().toString();
+	    	  
+	    	  
+	    	Log.d("DEBUG ActivityTrip: ", from);
+	    	Log.d("DEBUG ActivityTrip: ", to);
+	    	Log.d("DEBUG ActivityTrip: ", date);
+	    	Log.d("DEBUG ActivityTrip: ", time);
+	    	Log.d("DEBUG ActivityTrip: ", seats.toString());
+	    	Log.d("DEBUG ActivityTE.toString()rip: ", desc);
+	    	
+	    	if(from.length() < 1|| to.length() < 1 || date.length() < 1 ||time.length() < 1  || seats.toString().length() < 1 )
+	    	{
+	    		Toast.makeText(v.getContext(),"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT).show();
+	    	}
+	    	  
+	    	  
+	    	}
+	    	 catch(Exception E){
+	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
+	          }
 	    	 
 	    	 //ActivityTrip.this.startActivity(inte);
 	      }
