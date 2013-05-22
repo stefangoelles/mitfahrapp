@@ -23,7 +23,7 @@ public class MainWindow extends Activity {
 		    {
 		      public void onClick(View v)
 		      {
-		    	 Intent inte = new Intent(MainWindow.this, ActivityTrip.class);
+		    	 Intent inte = new Intent(MainWindow.this, ActivityOfferRide.class);
 		    	  MainWindow.this.startActivity(inte);
 		      }
 		    });
