@@ -6,13 +6,18 @@ import java.util.Date;
  
 public class DateValidator {
  
-	public boolean isThisDateValid(String dateToValidate, String dateFromat){
+	public boolean isThisDateValid(String dateToValidate, String dateFormat){
  
-		if(dateToValidate == null){
+		if(dateToValidate == null)
+		{
+			return false;
+		}
+		else if (dateFormat == null)
+		{
 			return false;
 		}
  
-		SimpleDateFormat sdf = new SimpleDateFormat(dateFromat);
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
 		sdf.setLenient(false);
  
 		try {
