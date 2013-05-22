@@ -43,7 +43,7 @@ public class ActivityTrip extends Activity {
 	      public void onClick(View v)
 	      {
 
-	    	 Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
+	    	  Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
 	    	 try{
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = m_edit_from.getText().toString();
@@ -62,21 +62,24 @@ public class ActivityTrip extends Activity {
 	    	  
 	    	  final EditText m_edit_desc = (EditText) findViewById(R.id.txt_beschreibung);
 	    	  desc = m_edit_desc.getText().toString();
-	    	  
-	    	  
-	    	Log.d("DEBUG ActivityTrip: ", from);
-	    	Log.d("DEBUG ActivityTrip: ", to);
-	    	Log.d("DEBUG ActivityTrip: ", date);
-	    	Log.d("DEBUG ActivityTrip: ", time);
-	    	Log.d("DEBUG ActivityTrip: ", seats.toString());
-	    	Log.d("DEBUG ActivityTE.toString()rip: ", desc);
+	    	 }
+	    	 catch(Exception E){
+	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
+	          }
+	    	Log.d("DEBUG ActivityTrip: from", from);
+	    	Log.d("DEBUG ActivityTrip: to", to);
+	    	Log.d("DEBUG ActivityTrip: date", date);
+	    	Log.d("DEBUG ActivityTrip: time", time);
+	    	Log.d("DEBUG ActivityTrip: seats", seats.toString());
+	    	Log.d("DEBUG ActivityTrip: desc", desc);
 	    	
-	    	if(from.length() < 1|| to.length() < 1 || date.length() < 1 ||time.length() < 1  || seats.toString().length() < 1 )
+	    	if(from.length() < 1|| to.length() < 1 || date.length() < 1 ||time.length() < 1  || seats.equals(null)  )
 	    	{
 	    		Toast.makeText(v.getContext(),"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT).show();
 	    	}
 	    	else
 	    	{
+	    		
 	    		inte.putExtra("from", from);
 	    		inte.putExtra("to", to);
 	    		inte.putExtra("date", date);
@@ -87,10 +90,8 @@ public class ActivityTrip extends Activity {
 	    		ActivityTrip.this.startActivity(inte);
 	    	}
 	    	  
-	    	}
-	    	 catch(Exception E){
-	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
-	          }
+	    	
+	    	
 
 	      }
 	    });

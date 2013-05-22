@@ -47,8 +47,8 @@
             android:label="@string/title_activity_activity_check_input" >
         </activity>
         <activity
-            android:name="com.mitfahr.ActivityCeckTrip"
-            android:label="@string/title_activity_activity_ceck_trip" >
+            android:name="com.mitfahr.ActivityCheckTrip"
+            android:label="@string/title_activity_activity_check_trip" >
         </activity>
        
     </application>
