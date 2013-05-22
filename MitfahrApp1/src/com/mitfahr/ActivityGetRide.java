@@ -23,7 +23,7 @@ import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
-public class ActivityRide<T> extends Activity 
+public class ActivityGetRide<T> extends Activity 
 {
 	private String from = "Graz";
 	private String to = "Tiol";
