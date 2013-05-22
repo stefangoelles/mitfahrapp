@@ -41,7 +41,7 @@ public class MainWindow extends Activity {
 		    {
 		      public void onClick(View v)
 		      {
-		    	 Intent inte = new Intent(MainWindow.this, ActivityOwnrides.class);
+		    	 Intent inte = new Intent(MainWindow.this, ActivityOwnRides.class);
 		    	  MainWindow.this.startActivity(inte);
 		    	  finish();
 		      }
