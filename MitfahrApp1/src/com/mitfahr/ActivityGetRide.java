@@ -37,7 +37,7 @@ public class ActivityGetRide<T> extends Activity
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ride);
+		setContentView(R.layout.activity_getride);
 		
 		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
 				this, R.layout.viewlist_adapter_rides);
