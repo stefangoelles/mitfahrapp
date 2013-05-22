@@ -11,7 +11,11 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Color;
 import android.text.format.DateFormat;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -35,26 +39,21 @@ public class ActivityRide<T> extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ride);
 		
-		List rideList = new ArrayList<String>();
-		rideList.add("Item1");
-		rideList.add("Item2");
-		rideList.add("Item3");
-		rideList.add("Item4");
+		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
+				this, R.layout.viewlist_adapter_rides);
 		
-		ListAdapter listAdapter = new ArrayAdapter<T>(getApplicationContext(), R.layout.custom_list_view, rideList);
-
-//		array_ride = new ArrayAdapter<String>(this, R.layout.activity_ride, rideList);
-		//final ListView listRideView = (ListView) findViewById(R.id.list_ride);
-		//listRideView.setAdapter(array_ride);
+		ListView listView = (ListView) findViewById(R.id.list_ride);
 		
 		
-		
-		
-		
-		final ListView LV = (ListView)findViewById(R.id.list_ride);
-		
-		LV.setAdapter(listAdapter);
-		
+		for(int i = 0; i<50; i++){
+			
+			listAdapter.add("bla");
+			
+			
+		}
+		listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+		listView.setAdapter(listAdapter);
+	
 		
 		
 		

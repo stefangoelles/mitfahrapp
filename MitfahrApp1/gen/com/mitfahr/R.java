@@ -25,7 +25,7 @@ public final class R {
         public static final int image=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08001f;
+        public static final int action_settings=0x7f08001e;
         public static final int activity_trip=0x7f080015;
         public static final int btn_agb=0x7f080008;
         public static final int btn_check_trip_store=0x7f080006;
@@ -45,7 +45,6 @@ public final class R {
         public static final int lbl_check_trip_time=0x7f080003;
         public static final int lbl_check_trip_to=0x7f080001;
         public static final int list_ride=0x7f080014;
-        public static final int text1=0x7f08001e;
         public static final int txt_beschreibung=0x7f080018;
         public static final int txt_bis=0x7f080017;
         public static final int txt_date=0x7f080016;
@@ -67,8 +66,8 @@ public final class R {
         public static final int activity_ownrides=0x7f030005;
         public static final int activity_ride=0x7f030006;
         public static final int activity_trip=0x7f030007;
-        public static final int custom_list_view=0x7f030008;
-        public static final int viewlist_adapter_ownrides=0x7f030009;
+        public static final int viewlist_adapter_ownrides=0x7f030008;
+        public static final int viewlist_adapter_rides=0x7f030009;
     }
     public static final class menu {
         public static final int activity_agb=0x7f070000;
