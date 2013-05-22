@@ -9,7 +9,7 @@
     tools:context=".ActivityImpressum" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/txt_activityImpressum_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_agb"
@@ -31,7 +31,7 @@ Kontakietren Sie uns via: l.radacher@gmail.com
 Mit Vergnügen werden wir Ihre Probleme bearbeiten. " />
 
     <Button
-        android:id="@+id/btn_agb"
+        android:id="@+id/btn_activityImpressum_agb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

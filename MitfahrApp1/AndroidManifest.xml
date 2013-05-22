@@ -34,7 +34,7 @@
             android:label="@string/title_activity_activity_trip" >
         </activity>
         <activity
-            android:name="com.mitfahr.ActivityRide"
+            android:name="com.mitfahr.ActivityGetRide"
             android:label="@string/title_activity_activity_ride"
             android:theme="@style/ListFont" >
         </activity>

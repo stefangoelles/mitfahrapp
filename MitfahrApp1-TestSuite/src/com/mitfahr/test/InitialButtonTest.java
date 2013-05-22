@@ -6,18 +6,18 @@ import org.junit.Before;
 
 import com.jayway.android.robotium.solo.Solo;
 import com.mitfahr.ActivityOwnRides;
-import com.mitfahr.ActivityRide;
+import com.mitfahr.ActivityGetRide;
 import com.mitfahr.ActivityOfferRide;
 import com.mitfahr.MainWindow;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 
 public class InitialButtonTest extends
 		ActivityInstrumentationTestCase2<MainWindow> {
 
-	
 	private Solo solo;
-	
+
 	@SuppressWarnings("deprecation")
 	public InitialButtonTest() {
 		super("com.mitfahr", MainWindow.class);
@@ -30,27 +30,19 @@ public class InitialButtonTest extends
 		solo = new Solo(getInstrumentation(), getActivity());
 	}
 
-	public void testAddRemove()
-	{
+	public void testAddRemove() {
 		solo.assertCurrentActivity("Check on first activity", MainWindow.class);
-		
 		solo.clickOnButton("Fahren");
 		solo.assertCurrentActivity("Check Button_1", ActivityOfferRide.class);
-		
 		solo.goBack();
-		
 		solo.clickOnButton("Mitfahren");
-		solo.assertCurrentActivity("Check Button_2", ActivityRide.class);
-		
+		solo.assertCurrentActivity("Check Button_2", ActivityGetRide.class);
 		solo.goBack();
 		solo.goBack();
 
-		
 		solo.clickOnButton("Eigene Fahrten");
 		solo.assertCurrentActivity("Check Button_3", ActivityOwnRides.class);
-		
 		solo.goBack();
-
 	}
 
 }

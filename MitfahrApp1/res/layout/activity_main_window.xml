@@ -10,10 +10,10 @@
     tools:context=".MainWindow" >
 
     <Button
-        android:id="@+id/btn_ownrides"
+        android:id="@+id/btn_activityMainWindow_ownrides"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_info"
+        android:layout_above="@+id/btn_activityMainWindow_info"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:background="#000000"
@@ -24,7 +24,7 @@
     	
 
     <ImageButton
-        android:id="@+id/btn_info"
+        android:id="@+id/btn_activityMainWindow_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -35,11 +35,11 @@
         android:src="@android:drawable/ic_dialog_info" />
 
     <Button
-        android:id="@+id/btn_ride"
+        android:id="@+id/btn_activityMainWindow_ride"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_ownrides"
-        android:layout_alignLeft="@+id/btn_ownrides"
+        android:layout_above="@+id/btn_activityMainWindow_ownrides"
+        android:layout_alignLeft="@+id/btn_activityMainWindow_ownrides"
         android:layout_marginBottom="18dp"
         android:background="#000000"
          android:textColor="#FFFFFF"
@@ -47,11 +47,11 @@
         android:text="Mitfahren" />
 
     <Button
-        android:id="@+id/btn_trip"
+        android:id="@+id/btn_activityMainWindow_trip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_ride"
-        android:layout_alignLeft="@+id/btn_ride"
+        android:layout_above="@+id/btn_activityMainWindow_ride"
+        android:layout_alignLeft="@+id/btn_activityMainWindow_ride"
         android:layout_marginBottom="33dp"
         android:background="#000000"
          android:textColor="#FFFFFF"

@@ -14,9 +14,9 @@ public class MainWindow extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_window);
 		
-		 Button button_trip = (Button) findViewById(R.id.btn_trip);
-		 Button button_ride = (Button) findViewById(R.id.btn_ride);
-		 Button button_ownrides = (Button) findViewById(R.id.btn_ownrides);
+		 Button button_trip = (Button) findViewById(R.id.btn_activityMainWindow_trip);
+		 Button button_ride = (Button) findViewById(R.id.btn_activityMainWindow_ride);
+		 Button button_ownrides = (Button) findViewById(R.id.btn_activityMainWindow_ownrides);
 		
 		 button_trip.setOnClickListener(new OnClickListener()
 		    {
