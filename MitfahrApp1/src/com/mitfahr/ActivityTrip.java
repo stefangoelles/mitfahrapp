@@ -36,6 +36,7 @@ public class ActivityTrip extends Activity {
 		setContentView(R.layout.activity_trip);
 		
 		
+		
 		Button button_weiter = (Button) findViewById(R.id.btn_weiter);
 		
 		button_weiter.setOnClickListener(new OnClickListener()
@@ -45,6 +46,7 @@ public class ActivityTrip extends Activity {
 
 	    	  Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
 	    	 try{
+	    		 
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = m_edit_from.getText().toString();
 	    	 
@@ -62,10 +64,15 @@ public class ActivityTrip extends Activity {
 	    	  
 	    	  final EditText m_edit_desc = (EditText) findViewById(R.id.txt_beschreibung);
 	    	  desc = m_edit_desc.getText().toString();
+	    	  
+	    	  
 	    	 }
 	    	 catch(Exception E){
 	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
 	          }
+	    	 
+	    	
+	    	 
 	    	Log.d("DEBUG ActivityTrip: from", from);
 	    	Log.d("DEBUG ActivityTrip: to", to);
 	    	Log.d("DEBUG ActivityTrip: date", date);
@@ -73,10 +80,18 @@ public class ActivityTrip extends Activity {
 	    	Log.d("DEBUG ActivityTrip: seats", seats.toString());
 	    	Log.d("DEBUG ActivityTrip: desc", desc);
 	    	
+	    	DateValidator val = new DateValidator();
+	    	
 	    	if(from.length() < 1|| to.length() < 1 || date.length() < 1 ||time.length() < 1  || seats.equals(null)  )
 	    	{
 	    		Toast.makeText(v.getContext(),"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT).show();
 	    	}
+	    	
+	    	else if( val.isThisDateValid(date, "dd.mm.yyyy") == false){
+	    		Log.d("Date not valid........", "bla");
+	    		Toast.makeText(v.getContext(),"Bitte Datum im Format dd.mm.yyyy eingeben!", Toast.LENGTH_SHORT).show();
+	    	}
+
 	    	else
 	    	{
 	    		
