@@ -2,13 +2,13 @@ package com.mitfahr;
 
 import com.mitfahr.R.layout;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import com.mitfahr.database.Fahrt;
 import com.mitfahr.database.FahrtenModel;
-
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -25,17 +25,15 @@ public class ActivityTrip extends Activity {
 	
 	private String from;
 	private String to;
-	private String date;
 	private String time;
 	private Integer seats;
 	private String desc;
+	private String date;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trip);
-		
-		
 		
 		Button button_weiter = (Button) findViewById(R.id.btn_weiter);
 		
@@ -45,7 +43,7 @@ public class ActivityTrip extends Activity {
 	      {
 
 	    	  Intent inte = new Intent(ActivityTrip.this, ActivityCheckTrip.class);
-	    	 try{
+	    	  try{
 	    		 
 	    	  final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
 	    	  from = m_edit_from.getText().toString();
@@ -67,12 +65,12 @@ public class ActivityTrip extends Activity {
 	    	  
 	    	  
 	    	 }
-	    	 catch(Exception E){
+	    	 catch(Exception E)
+	    	 {
 	              Toast.makeText(v.getContext(),"Sitzplätze dürfen nicht leer sein", Toast.LENGTH_SHORT).show();
-	          }
+	         }
 	    	 
-	    	
-	    	 
+
 	    	Log.d("DEBUG ActivityTrip: from", from);
 	    	Log.d("DEBUG ActivityTrip: to", to);
 	    	Log.d("DEBUG ActivityTrip: date", date);
@@ -87,14 +85,18 @@ public class ActivityTrip extends Activity {
 	    		Toast.makeText(v.getContext(),"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT).show();
 	    	}
 	    	
-	    	else if( val.isThisDateValid(date, "dd.mm.yyyy") == false){
+	    	else if( val.isThisDateValid(date, "dd.MM.yyyy") == false){
 	    		Log.d("Date not valid........", "bla");
-	    		Toast.makeText(v.getContext(),"Bitte Datum im Format dd.mm.yyyy eingeben!", Toast.LENGTH_SHORT).show();
+	    		Toast.makeText(v.getContext(),"Bitte Datum im Format dd.MM.yyyy eingeben!", Toast.LENGTH_SHORT).show();
+	    	}
+	    	
+	    	else if( val.isThisDateValid(time, "hh:mm") == false){
+	    		Log.d("Time not valid........", "bla");
+	    		Toast.makeText(v.getContext(),"Bitte Zeit im Format hh:mm eingeben!", Toast.LENGTH_SHORT).show();
 	    	}
 
 	    	else
 	    	{
-	    		
 	    		inte.putExtra("from", from);
 	    		inte.putExtra("to", to);
 	    		inte.putExtra("date", date);
@@ -104,10 +106,6 @@ public class ActivityTrip extends Activity {
 	    		
 	    		ActivityTrip.this.startActivity(inte);
 	    	}
-	    	  
-	    	
-	    	
-
 	      }
 	    });
 		

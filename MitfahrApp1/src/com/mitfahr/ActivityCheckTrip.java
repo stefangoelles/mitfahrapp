@@ -1,5 +1,9 @@
 package com.mitfahr;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +22,7 @@ public class ActivityCheckTrip extends Activity {
 	private String check_time;
 	private String check_seats;
 	private String check_desc;
+	private Date convert_date;
 	
 
 	@Override
@@ -59,8 +64,27 @@ public class ActivityCheckTrip extends Activity {
 	    {
 	      public void onClick(View v)
 	      {
+	    	  
 	    	 //IMPLEMENTATION
 	    	//store to database here
+	   
+	  		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+	  		sdf.setLenient(false);
+	   
+	  		try 
+	  		{
+	   
+	  			//if not valid, it will throw ParseException
+	  			Date date = sdf.parse(check_date);
+	  			Log.d("DEBUG ActivityCheckTrip date:", date.toString());
+	   
+	  		} 
+	  		catch (ParseException e) 
+	  		{
+	  			Log.d("DEBUG ActivityCheckTrip date:", " ERROR");
+	  			e.printStackTrace();
+	  		}
+	    	  
 	    	  Log.d("DEBUG OUTPUT", "DATA successfully stored to Database!");
 	    	  
 	      }
