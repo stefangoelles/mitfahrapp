@@ -24,7 +24,7 @@ public class ActivityOfferRide extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_trip);
+		setContentView(R.layout.activity_offerride);
 
 		Button button_weiter = (Button) findViewById(R.id.btn_weiter);
 
