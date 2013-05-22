@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({SomeTest.class, InitialButtonTest.class})
+@SuiteClasses({SomeTest.class, InitialButtonTest.class, DateValidatorTest.class})
 public class MitfahrAppTestSuite {
 	
 	

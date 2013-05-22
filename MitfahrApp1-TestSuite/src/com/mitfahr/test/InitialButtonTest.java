@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 import com.jayway.android.robotium.solo.Solo;
-import com.mitfahr.ActivityOwnrides;
+import com.mitfahr.ActivityOwnRides;
 import com.mitfahr.ActivityRide;
-import com.mitfahr.ActivityTrip;
+import com.mitfahr.ActivityOfferRide;
 import com.mitfahr.MainWindow;
 
 import android.test.ActivityInstrumentationTestCase2;
@@ -35,7 +35,7 @@ public class InitialButtonTest extends
 		solo.assertCurrentActivity("Check on first activity", MainWindow.class);
 		
 		solo.clickOnButton("Fahren");
-		solo.assertCurrentActivity("Check Button_1", ActivityTrip.class);
+		solo.assertCurrentActivity("Check Button_1", ActivityOfferRide.class);
 		
 		solo.goBack();
 		
@@ -47,7 +47,7 @@ public class InitialButtonTest extends
 
 		
 		solo.clickOnButton("Eigene Fahrten");
-		solo.assertCurrentActivity("Check Button_3", ActivityOwnrides.class);
+		solo.assertCurrentActivity("Check Button_3", ActivityOwnRides.class);
 		
 		solo.goBack();
 
