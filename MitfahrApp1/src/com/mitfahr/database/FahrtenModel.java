@@ -42,9 +42,11 @@ private FahrtenModel(){
 		
 	}
 	
-	public void insertFahrt(Fahrt fahrt)
+	public boolean insertFahrt(Fahrt fahrt)
 	{
 		Fahrten.add(fahrt);
+		
+		return false;
 	}
 	
 	public List<Fahrt> getFahrten(String from, String to, int year, int month, int day, int costs, String aso, 
