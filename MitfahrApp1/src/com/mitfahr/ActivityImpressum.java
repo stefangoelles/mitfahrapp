@@ -23,8 +23,8 @@ public class ActivityImpressum extends Activity {
 		      public void onClick(View v)
 		      {
 		    	 Intent inte = new Intent(ActivityImpressum.this, ActivityAGB.class);
-		    	  ActivityImpressum.this.startActivity(inte);
-		    	 // setContentView(R.layout.activity_trip);
+		    	  //ActivityImpressum.this.startActivity(inte);
+		    	  setContentView(R.layout.activity_agb);
 	
 		      }
 		    });

@@ -30,7 +30,7 @@ public class ActivityCheckTrip extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_check_trip);
 		
-		Button button_store_to_db = (Button) findViewById(R.id.btn_check_trip_store);
+		Button button_store_to_db = (Button) findViewById(R.id.btn_checkTrip_store);
 		
 		check_from = getIntent().getStringExtra("from");
 		check_to = getIntent().getStringExtra("to");
@@ -40,17 +40,17 @@ public class ActivityCheckTrip extends Activity {
 		check_desc = getIntent().getStringExtra("desc");
 		
 		
-	    TextView text = (TextView) findViewById(R.id.lbl_check_trip_from);
+	    TextView text = (TextView) findViewById(R.id.lbl_checkTrip_from);
 	    text.setText(check_from);
-	    text = (TextView) findViewById(R.id.lbl_check_trip_to);
+	    text = (TextView) findViewById(R.id.lbl_checkTrip_to);
 	    text.setText(check_to);
-	    text = (TextView) findViewById(R.id.lbl_check_trip_date);
+	    text = (TextView) findViewById(R.id.lbl_checkTrip_date);
 	    text.setText(check_date);
-	    text = (TextView) findViewById(R.id.lbl_check_trip_time);
+	    text = (TextView) findViewById(R.id.lbl_checkTrip_time);
 	    text.setText(check_time);
-	    text = (TextView) findViewById(R.id.lbl_check_trip_seats);
+	    text = (TextView) findViewById(R.id.lbl_checkTrip_seats);
 	    text.setText(check_seats);
-	    text = (TextView) findViewById(R.id.lbl_check_trip_desc);
+	    text = (TextView) findViewById(R.id.lbl_checkTrip_desc);
 	    text.setText(check_desc);
 		
 		Log.d("DEBUG ActivityCheckTrip", check_from);

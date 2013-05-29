@@ -3,7 +3,7 @@ package com.mitfahr.database;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Fahrt {
+public class Ride {
 
 	java.text.SimpleDateFormat date_format = new java.text.SimpleDateFormat(
 			"yyyy-MM-dd");
@@ -20,9 +20,29 @@ public class Fahrt {
 	private String email = null;
 	private String time = null;
 
-	public Fahrt(String from, String to, int year, int month, int day,
+
+	public void Fahrt(String from, String to, int year, int month, int day,
 			int costs, String aso, String phone, String name, String email,
-			int hour, int minute) {
+			int hour, int minute) {	
+	
+	}
+	
+	public Ride(String from, String to, int year, int month, int day, int costs, String aso,
+			String phone, String name, String email, int hour, int minute) {
+		super();
+		this.date = date_format.format(new Date(year-1900, month-1, day));
+		this.from = from;
+		this.to = to;
+		this.costs = costs;
+		this.aso = aso;
+		this.phone = phone;
+		this.name = name;
+		this.email = email;
+		this.time = new String(hour + ":" + minute);
+	}
+	
+	public Ride(int ID,String from, String to, int year, int month, int day, int costs, String aso,
+			String phone, String name, String email, int hour, int minute) {
 		super();
 		this.date = date_format.format(new Date(year - 1900, month - 1, day));
 		this.from = from;
