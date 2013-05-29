@@ -1,6 +1,6 @@
 package com.mitfahr;
 
-import com.mitfahr.database.Fahrt;
+import com.mitfahr.database.Ride;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -109,9 +109,7 @@ public class ActivityOfferRide extends Activity {
 					
 					int dateParts[] = Utils.getInstance().splitDate(date);
 					
-					Fahrt fahrt = new Fahrt(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute);
-					
-					
+					Ride ride = new Ride(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute);
 					
 					
 					ActivityOfferRide.this.startActivity(inte);

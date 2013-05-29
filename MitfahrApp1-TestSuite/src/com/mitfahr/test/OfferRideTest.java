@@ -3,8 +3,8 @@ package com.mitfahr.test;
 import junit.framework.Assert;
 
 import com.mitfahr.DateValidator;
-import com.mitfahr.database.Fahrt;
-import com.mitfahr.database.FahrtenModel;
+import com.mitfahr.database.Ride;
+import com.mitfahr.database.RideModel;
 
 import android.test.AndroidTestCase;
 
@@ -28,8 +28,8 @@ public class OfferRideTest extends AndroidTestCase
 		int hour = 5;
 		int minute = 5;
 		
-		Fahrt fahrt = new Fahrt(from, to, year, month, day, costs, aso, phone, name, email, hour, minute);
-		boolean result = FahrtenModel.getInstance().insertFahrt(fahrt);
+		Ride ride = new Ride(from, to, year, month, day, costs, aso, phone, name, email, hour, minute);
+		boolean result = RideModel.getInstance().insertRides(ride);
 		
 		
 		Assert.assertEquals(true, result);
@@ -53,8 +53,8 @@ public class OfferRideTest extends AndroidTestCase
 		int hour = 5;
 		int minute = 5;
 		
-		Fahrt fahrt = new Fahrt(from, to, year, month, day, costs, aso, phone, name, email, hour, minute);
-		boolean result = FahrtenModel.getInstance().insertFahrt(fahrt);
+		Ride ride = new Ride(from, to, year, month, day, costs, aso, phone, name, email, hour, minute);
+		boolean result = RideModel.getInstance().insertRides(ride);
 		
 		
 		Assert.assertEquals(true, result);

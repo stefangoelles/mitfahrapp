@@ -42,9 +42,10 @@ private RideModel(){
 		
 	}
 	
-	public void insertRides(Ride ride)
+	public boolean insertRides(Ride ride)
 	{
 		rideen.add(ride);
+		return false;
 	}
 	
 	public List<Ride> getRides(String from, String to, int year, int month, int day, int costs, String aso, 
