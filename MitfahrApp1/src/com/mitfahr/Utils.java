@@ -1,5 +1,7 @@
 package com.mitfahr;
 
+import android.util.Log;
+
 public class Utils {
 
 	private static Utils instance; 
@@ -9,7 +11,9 @@ public class Utils {
 	{
 		if (instance == null) {
 			instance = new Utils();
+			Log.d("testing", "Utils class new instance");
 		}
+		
 		return instance;
 	}
 	
@@ -20,9 +24,11 @@ public class Utils {
 	 * @return
 	 */
 	public int[] splitDate(String date){
-		String dateParts[] = date.split(".");
+		//Log.d("testing", "Utils split date started .. " + date);
+		String dateParts[] = date.split("\\.", 3);
 		
-		int parts[] = {Integer.getInteger(dateParts[0]), Integer.getInteger(dateParts[1])};
+		int parts[] = {Integer.parseInt(dateParts[0]), Integer.parseInt(dateParts[1]), Integer.parseInt(dateParts[2])};
+		//Log.d("testing", "parts = " + parts.toString() + "len " + parts.length);
 		return parts;
 	}
 	
