@@ -9,7 +9,7 @@
     tools:context=".ActivityImpressum" >
 
     <EditText
-        android:id="@+id/txt_activityImpressum_editText"
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_agb"
@@ -27,11 +27,11 @@ mit Freundlicher Unterstützung von zauberbox.at (Ihr OnlineShop für Zauberbeda
 ein weiteres Uni-Projekt der TU Graz für deren Funktionalität wir Studenten natürlich wiedereinmal keine Garantie übernehmen. 
 Weitere Informationen finden Sie in den Nutzungsbedingungen.
 
-Kontakietren Sie uns via: l.radacher@gmail.com
+Kontaktieren Sie uns via: l.radacher@gmail.com
 Mit Vergnügen werden wir Ihre Probleme bearbeiten. " />
 
     <Button
-        android:id="@+id/btn_activityImpressum_agb"
+        android:id="@+id/btn_agb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
