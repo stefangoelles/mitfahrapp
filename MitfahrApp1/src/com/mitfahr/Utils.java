@@ -23,7 +23,7 @@ public class Utils {
 		String dateParts[] = date.split(".");
 		
 		int parts[] = {Integer.getInteger(dateParts[0]), Integer.getInteger(dateParts[1])};
-		return dateParts;
+		return parts;
 	}
 	
 	public int[] splitTime(String time){
