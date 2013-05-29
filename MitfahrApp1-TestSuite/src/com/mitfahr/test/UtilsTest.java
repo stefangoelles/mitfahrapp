@@ -11,12 +11,12 @@ public class UtilsTest extends AndroidTestCase
 {
 	public void testSplitDateCorrect(){
 		Utils testUtils = Utils.getInstance();
-		Log.d("testing", "Testcase: Instance received");
-		Log.d("testing", testUtils.toString());
+		//Log.d("testing", "Testcase: Instance received");
+		//Log.d("testing", testUtils.toString());
 		int[] expected = {29,05,2013};
-		Log.d("testing", "expected string " + expected[0]);
+		//og.d("testing", "expected string " + expected[0]);
 		int[] result = testUtils.splitDate("29.05.2013");
-		Log.d("testing", "Result string " + result[0]);
+		//Log.d("testing", "Result string " + result[0]);
 		Assert.assertEquals(expected.length , result.length);
 	}
 	
@@ -27,7 +27,7 @@ public class UtilsTest extends AndroidTestCase
 		
 		int[] result = testUtils.splitDate("2.011.2013");
 		
-		Assert.assertEquals(expected[1], result[1]);
+		Assert.assertEquals(expected[0], result[0]);
 	}
 	
 	public void testSplitTimeCorrect(){
@@ -43,9 +43,9 @@ public class UtilsTest extends AndroidTestCase
 	public void testSplitTimeWrong(){
 		Utils testUtils = Utils.getInstance();
 		
-		int[] expected = {1,13,15};
+		int[] expected = {00,13};
 		
-		int[] result = testUtils.splitTime("1:3:15");
+		int[] result = testUtils.splitTime("00:13");
 		
 		Assert.assertEquals(expected.length, result.length);
 	}
