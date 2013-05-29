@@ -19,20 +19,7 @@
             android:layout_marginTop="28dp"
             android:ems="10"
             android:hint="Datum eingeben:"
-            android:inputType="date" >
-
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/txt_activityOfferride_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txt_activityOfferride_size"
-            android:ems="10"
-            android:hint="Beschreibung: "
-            android:inputType="textMultiLine" />
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/txt_activityOfferride_time"
@@ -44,16 +31,6 @@
             android:ems="10"
             android:hint="Abfahrtszeit eingeben: "
             android:inputType="time" />
-
-        <EditText
-            android:id="@+id/txt_activityOfferride_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txt_activityOfferride_time"
-            android:ems="10"
-            android:hint="Plätze:"
-            android:inputType="number" />
 
         <EditText
             android:id="@+id/txt_activityOfferride_from"
@@ -85,13 +62,30 @@
             android:layout_marginRight="47dp"
             android:text="Weiter" />
 
-        <TextView
-            android:id="@+id/textView1"
+        <EditText
+            android:id="@+id/txt_activityOfferride_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_activityOfferride_next"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Fahrt erstellen" />
+            android:layout_marginBottom="22dp"
+            android:ems="10"
+            android:hint="Beschreibung: "
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/txt_activityOfferride_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_activityOfferride_desc"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="14dp"
+            android:ems="10"
+            android:hint="Plätze:"
+            android:inputType="number" />
 
     </RelativeLayout>
 

@@ -8,34 +8,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ActivityImpressum" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <Button
+        android:id="@+id/btn_agb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="AGB" />
+
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_above="@+id/btn_agb"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:editable="false"
+        android:layout_alignRight="@+id/btn_agb"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="54dp"
+        android:lineSpacingExtra="5dip"
         android:ems="10"
-        android:text="Impressum:
+        android:editable="false"
+        android:clickable="false"
         
-
-Team NoName 
-
+        android:inputType="textMultiLine"
+        android:text="
 mit Freundlicher Unterstützung von zauberbox.at (Ihr OnlineShop für Zauberbedarf) für das Zurverfügungstellen eines Servers
 
 ein weiteres Uni-Projekt der TU Graz für deren Funktionalität wir Studenten natürlich wiedereinmal keine Garantie übernehmen. 
 Weitere Informationen finden Sie in den Nutzungsbedingungen.
 
 Kontaktieren Sie uns via: l.radacher@gmail.com
-Mit Vergnügen werden wir Ihre Probleme bearbeiten. " />
+Mit Vergnügen werden wir Ihre Probleme bearbeiten." >
 
-    <Button
-        android:id="@+id/btn_agb"
+        
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/editText1"
-        android:text="AGB" />
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="41dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/btn_agb"
+        android:text="ÜBER UNS"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:textColor="#FF0033"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="23dp"
+        android:text="Team FAAAILLL" />
 
 </RelativeLayout>
