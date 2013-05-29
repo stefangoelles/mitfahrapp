@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -58,18 +60,34 @@ public class MainWindow extends TabActivity {
 		tabHost.addTab(tabSpecHome);
 		tabHost.addTab(tabSpecCreate);
 		tabHost.addTab(tabSpecSearch);
-		tabHost.addTab(tabSpecAbout);
+		//tabHost.addTab(tabSpecAbout);
  
-		//set Home tab as default (zero based)
+		//set Home tab gitas default (zero based)
 		tabHost.setCurrentTab(0);
 	}
 
-	/*@Override
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		 //Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main_window, menu);
-		return true;
-	}*/
+	   // MenuInflater inflater = getMenuInflater();
+	    getMenuInflater().inflate(R.menu.menu, menu);
+	    return true;
+	}
 	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+	    case R.id.about:
+	    	startActivity(new Intent(this, com.mitfahr.ActivityImpressum.class));
+	   // startActivity(new Intent(this, Impressum.class));
+	    return true;
+	    case R.id.statistics:
+	    	System.exit(0);
+	    //startActivity(new Intent(this, Help.class));
+	    return true;
+	    case R.id.exit:
+	    	System.exit(0);
+	    default:
+	    return super.onOptionsItemSelected(item);
+	}
 
+	}
 }
