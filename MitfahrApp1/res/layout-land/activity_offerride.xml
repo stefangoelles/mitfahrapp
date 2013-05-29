@@ -11,28 +11,6 @@
         android:layout_weight="0.63" >
 
         <EditText
-            android:id="@+id/txt_activityOfferride_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/txt_activityOfferride_to"
-            android:layout_below="@+id/txt_activityOfferride_to"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="Datum eingeben:"
-            android:inputType="date" />
-
-        <EditText
-            android:id="@+id/txt_activityOfferride_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txt_activityOfferride_date"
-            android:layout_marginTop="21dp"
-            android:ems="10"
-            android:hint="Abfahrtszeit eingeben: "
-            android:inputType="time" />
-
-        <EditText
             android:id="@+id/txt_activityOfferride_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,14 +21,15 @@
             android:hint="Abfahrtsort eingeben:" />
 
         <EditText
-            android:id="@+id/txt_activityOfferride_to"
+            android:id="@+id/txt_activityOfferride_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/txt_activityOfferride_from"
             android:layout_marginTop="24dp"
             android:ems="10"
-            android:hint="Zielort eingeben:" />
+            android:hint="Datum eingeben:"
+            android:inputType="date" />
 
         <Button
             android:id="@+id/btn_activityOfferride_next"
@@ -58,31 +37,48 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="35dp"
-            android:layout_marginRight="47dp"
             android:text="Weiter" />
+
+        <EditText
+            android:id="@+id/txt_activityOfferride_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txt_activityOfferride_date"
+            android:layout_alignBottom="@+id/txt_activityOfferride_date"
+            android:layout_toLeftOf="@+id/btn_activityOfferride_next"
+            android:ems="10"
+            android:hint="Abfahrtszeit eingeben: "
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/txt_activityOfferride_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txt_activityOfferride_from"
+            android:layout_alignBottom="@+id/txt_activityOfferride_from"
+            android:layout_alignLeft="@+id/txt_activityOfferride_time"
+            android:ems="10"
+            android:hint="Zielort eingeben:" >
+
+            <requestFocus />
+        </EditText>
 
         <EditText
             android:id="@+id/txt_activityOfferride_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/btn_activityOfferride_next"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="22dp"
+            android:layout_toLeftOf="@+id/btn_activityOfferride_next"
             android:ems="10"
             android:hint="Beschreibung: "
-            android:inputType="textMultiLine" >
-
-            <requestFocus />
-        </EditText>
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/txt_activityOfferride_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/txt_activityOfferride_desc"
+            android:layout_above="@+id/btn_activityOfferride_next"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="14dp"
             android:ems="10"
             android:hint="Plätze:"
             android:inputType="number" />

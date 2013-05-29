@@ -16,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:text="AGB" />
 
-    <TextView
+    <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
@@ -25,9 +25,9 @@
         android:layout_alignRight="@+id/btn_agb"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="54dp"
-        android:lineSpacingExtra="5dip"
         android:ems="10"
         android:editable="false"
+        
         android:clickable="false"
         
         android:inputType="textMultiLine"
@@ -40,19 +40,8 @@ Weitere Informationen finden Sie in den Nutzungsbedingungen.
 Kontaktieren Sie uns via: l.radacher@gmail.com
 Mit Vergnügen werden wir Ihre Probleme bearbeiten." >
 
-        
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="41dp"
-        android:layout_marginTop="17dp"
-        android:layout_toLeftOf="@+id/btn_agb"
-        android:text="ÜBER UNS"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/textView2"
@@ -63,5 +52,16 @@ Mit Vergnügen werden wir Ihre Probleme bearbeiten." >
         android:layout_below="@+id/textView1"
         android:layout_marginTop="23dp"
         android:text="Team FAAAILLL" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="157dp"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/btn_agb"
+        android:text="ÜBER UNS"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

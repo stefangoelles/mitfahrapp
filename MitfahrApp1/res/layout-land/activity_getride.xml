@@ -52,14 +52,14 @@
          android:layout_below="@+id/txt_getRide_from"
          android:ems="10"
          android:hint="bis" />
-      
 
      <ListView
          android:id="@+id/list_getRide"
-         android:layout_width="match_parent"
+         android:layout_width="220dp"
          android:layout_height="220dp"
-         android:layout_alignLeft="@+id/txt_getRide_date"
-         android:layout_alignParentBottom="true"
+         android:layout_alignBottom="@+id/btn_activity_getride_go"
+         android:layout_alignParentRight="true"
+         android:layout_marginRight="22dp"
          android:clipToPadding="false"
          android:fitsSystemWindows="false" >
      </ListView>
@@ -68,11 +68,10 @@
          android:id="@+id/btn_activity_getride_go"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignRight="@+id/list_getRide"
-         android:layout_below="@+id/txt_getRide_time"
-         android:layout_marginTop="14dp"
+         android:layout_alignRight="@+id/txt_getRide_to"
+         android:layout_below="@+id/txt_getRide_date"
+         android:layout_marginRight="59dp"
+         android:layout_marginTop="24dp"
          android:text="Suchen" />
-     
-     
  
 </RelativeLayout>

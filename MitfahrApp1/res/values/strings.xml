@@ -3,6 +3,10 @@
 
     <string name="app_name">MitfahrApp1</string>
     <string name="action_settings">Settings</string>
+    <string name="file">Files</string>
+    <string name="open">open</string>
+    <string name="create_new">create_new</string>
+    <string name="title">title</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_activity_trip">ActivityTrip</string>
     <string name="title_activity_activity_ride">ActivityRide</string>
