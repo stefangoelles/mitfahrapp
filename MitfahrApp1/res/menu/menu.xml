@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   <item android:id="@+id/about"
+android:title="Über uns" 
+ android:icon="@drawable/ic_tab_about"
+  android:showAsAction="ifRoom"/>
+<item android:id="@+id/statistics"
+android:title="Statistik"
+ />
+<item android:id="@+id/exit"
+   android:title="Exit" />
+
+</menu>
