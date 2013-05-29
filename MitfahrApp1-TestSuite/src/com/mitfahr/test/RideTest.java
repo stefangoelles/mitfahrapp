@@ -17,7 +17,7 @@ import android.test.AndroidTestCase;
 
 public class RideTest extends AndroidTestCase
 {
-	private Ride test = new Ride(0, "asdf", "asdf", 2000, 1, 1, 1, "asdf", "asdf", "asdf", "asdf", 1, 1, 1);
+	private Ride test = new Ride(0, "asdf", "asdf", 2000, 1, 1, 1, "asdf", "asdf", "asdf", "asdf", 1, 1);
 	private boolean result = false; 
 	
 	public void testRideGetFrom(){
@@ -97,15 +97,5 @@ public class RideTest extends AndroidTestCase
 		result = false;
 	}
 	
-	public void testRideGetSeats(){
-		 
-		if(test.getSeats() == 1)
-		 {
-			 result = true;
-		 }
-
-		Assert.assertEquals(true, result);
-		result = false;
-	}
 
 }
