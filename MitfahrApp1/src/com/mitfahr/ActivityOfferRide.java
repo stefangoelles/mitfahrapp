@@ -1,5 +1,7 @@
 package com.mitfahr;
 
+import com.mitfahr.database.Fahrt;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,6 +22,13 @@ public class ActivityOfferRide extends Activity {
 	private Integer seats;
 	private String desc;
 	private String date;
+	private int costs;
+	private String phone;
+	private String name;
+	private String email;
+	private int hour;
+	private int minute;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +106,14 @@ public class ActivityOfferRide extends Activity {
 					inte.putExtra("seats", seats.toString());
 					inte.putExtra("desc", desc);
 
+					
+					int dateParts[] = Utils.getInstance().splitDate(date);
+					
+					Fahrt fahrt = new Fahrt(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute);
+					
+					
+					
+					
 					ActivityOfferRide.this.startActivity(inte);
 				}
 			}
