@@ -25,7 +25,7 @@ public class Utils {
 	 */
 	public int[] splitDate(String date){
 		//Log.d("testing", "Utils split date started .. " + date);
-		String dateParts[] = date.split("\\.", 3);
+		String dateParts[] = date.split("\\.+", 3);
 		
 		int parts[] = {Integer.parseInt(dateParts[0]), Integer.parseInt(dateParts[1]), Integer.parseInt(dateParts[2])};
 		//Log.d("testing", "parts = " + parts.toString() + "len " + parts.length);
@@ -33,9 +33,13 @@ public class Utils {
 	}
 	
 	public int[] splitTime(String time){
-		String timeParts[] = time.split(":");
+		//Log.d("testing",time);
+		String timeParts[] = time.split("\\p{Punct}",2);
+		//Log.d("testing", timeParts[0]);
+		//Log.d("testing", timeParts[1]);
 		
-		int parts[] = {Integer.getInteger(timeParts[0]), Integer.getInteger(timeParts[1])};
+		int parts[] = {Integer.parseInt(timeParts[0]), Integer.parseInt(timeParts[1])};
+		//Log.d("testing","Result " + parts[0]);
 		return parts;
 	}
 	
