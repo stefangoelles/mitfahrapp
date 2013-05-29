@@ -10,7 +10,7 @@
     tools:context=".ActivityGetRide" >
 
     <EditText
-        android:id="@+id/txt_ride_von"
+        android:id="@+id/txt_getRide_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -22,46 +22,45 @@
     </EditText>
 
     <EditText
-        android:id="@+id/txt_ride_bis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_ride_von"
-        android:layout_below="@+id/txt_ride_von"
-        android:layout_marginTop="20dp"
-        android:hint="bis"
-        android:ems="10" />
-
-    <EditText
-        android:id="@+id/txt_ride_date"
+        android:id="@+id/txt_getRide_date"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_ride_bis"
-        android:layout_below="@+id/txt_ride_bis"
+        android:layout_alignLeft="@+id/txt_getRide_to"
+        android:layout_below="@+id/txt_getRide_to"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="1/1/2013"
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/txt_ride_time"
+        android:id="@+id/txt_getRide_time"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txt_ride_date"
-        android:layout_alignBottom="@+id/txt_ride_date"
+        android:layout_alignBaseline="@+id/txt_getRide_date"
+        android:layout_alignBottom="@+id/txt_getRide_date"
         android:layout_marginLeft="34dp"
-        android:layout_toRightOf="@+id/txt_ride_date"
+        android:layout_toRightOf="@+id/txt_getRide_date"
         android:ems="10"
         android:hint="12:00"
         android:inputType="time" />
     
     
      <ListView
-        android:id="@+id/list_ride"
+        android:id="@+id/list_getRide"
        
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txt_ride_date"
+        android:layout_below="@+id/txt_getRide_date"
         android:layout_weight="1"
         />
+
+     <EditText
+         android:id="@+id/txt_getRide_to"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/txt_getRide_from"
+         android:layout_below="@+id/txt_getRide_from"
+         android:ems="10"
+         android:hint="bis" />
  
 </RelativeLayout>

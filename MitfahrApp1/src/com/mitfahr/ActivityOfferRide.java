@@ -26,7 +26,7 @@ public class ActivityOfferRide extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_offerride);
 
-		Button button_weiter = (Button) findViewById(R.id.btn_weiter);
+		Button button_weiter = (Button) findViewById(R.id.btn_activityOfferride_next);
 
 		button_weiter.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -35,22 +35,22 @@ public class ActivityOfferRide extends Activity {
 						ActivityCheckTrip.class);
 				try {
 
-					final EditText m_edit_from = (EditText) findViewById(R.id.txt_trip_von);
+					final EditText m_edit_from = (EditText) findViewById(R.id.txt_activityOfferride_from);
 					from = m_edit_from.getText().toString();
 
-					final EditText m_edit_to = (EditText) findViewById(R.id.txt_bis);
+					final EditText m_edit_to = (EditText) findViewById(R.id.txt_activityOfferride_to);
 					to = m_edit_to.getText().toString();
 
-					final EditText m_edit_date = (EditText) findViewById(R.id.txt_date);
+					final EditText m_edit_date = (EditText) findViewById(R.id.txt_activityOfferride_date);
 					date = m_edit_date.getText().toString();
 
-					final EditText m_edit_time = (EditText) findViewById(R.id.txt_time);
+					final EditText m_edit_time = (EditText) findViewById(R.id.txt_activityOfferride_time);
 					time = m_edit_time.getText().toString();
 
-					final EditText m_edit_seats = (EditText) findViewById(R.id.txt_size);
+					final EditText m_edit_seats = (EditText) findViewById(R.id.txt_activityOfferride_size);
 					seats = Integer.parseInt(m_edit_seats.getText().toString());
 
-					final EditText m_edit_desc = (EditText) findViewById(R.id.txt_beschreibung);
+					final EditText m_edit_desc = (EditText) findViewById(R.id.txt_activityOfferride_desc);
 					desc = m_edit_desc.getText().toString();
 
 				} catch (Exception E) {

@@ -42,7 +42,7 @@ public class ActivityGetRide<T> extends Activity
 		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
 				this, R.layout.viewlist_adapter_rides);
 		
-		ListView listView = (ListView) findViewById(R.id.list_ride);
+		ListView listView = (ListView) findViewById(R.id.list_getRide);
 		
 		
 		for(int i = 0; i<50; i++){
