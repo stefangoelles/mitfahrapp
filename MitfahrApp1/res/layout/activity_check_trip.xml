@@ -69,7 +69,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/lbl_checkTrip_store"
+        android:id="@+id/btn_checkTrip_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
