@@ -11,9 +11,9 @@ public class UtilsTest extends AndroidTestCase
 	public void testSplitDateCorrect(){
 		Utils testUtils = new Utils();
 		
-		String[] expected = {"29","05","2013"};
+		int[] expected = {29,05,2013};
 		
-		String[] result = testUtils.splitDate("29.05.2013");
+		int[] result = testUtils.splitDate("29.05.2013");
 		
 		Assert.assertEquals(expected, result);
 	}
@@ -21,9 +21,9 @@ public class UtilsTest extends AndroidTestCase
 	public void testSplitDateWrong(){
 		Utils testUtils = new Utils();
 		
-		String[] expected = {"29","05","2013"};
+		int[] expected = {29,05,2013};
 		
-		String[] result = testUtils.splitDate("2.011.2013");
+		int[] result = testUtils.splitDate("2.011.2013");
 		
 		Assert.assertEquals(expected, result);
 	}
