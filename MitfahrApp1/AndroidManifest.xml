@@ -29,12 +29,8 @@
             android:name="com.mitfahr.activity_trip"
             android:label="activity_trip" >
         </activity>
-        
-         <activity
-            android:name="com.mitfahr.ActivityImpressum">
-         
+        <activity android:name="com.mitfahr.ActivityImpressum" >
         </activity>
-        
         <activity
             android:name="com.mitfahr.ActivityOfferRide"
             android:label="@string/title_activity_activity_trip"
@@ -56,10 +52,12 @@
         </activity>
         <activity
             android:name="com.mitfahr.ActivityCheckTrip"
-            android:label="@string/title_activity_activity_check_trip" 
-            android:windowSoftInputMode="stateAlwaysVisible">
+            android:label="@string/title_activity_activity_check_trip"
+            android:windowSoftInputMode="stateAlwaysVisible" >
         </activity>
-       
+        <activity
+            android:name="com.mitfahr.ActivityRideList">
+        </activity>
     </application>
 
 </manifest>

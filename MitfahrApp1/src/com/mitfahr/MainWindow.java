@@ -80,7 +80,7 @@ public class MainWindow extends TabActivity {
 	   // startActivity(new Intent(this, Impressum.class));
 	    return true;
 	    case R.id.statistics:
-	    	System.exit(0);
+	    	startActivity(new Intent(this, com.mitfahr.ActivityStatistic.class));
 	    //startActivity(new Intent(this, Help.class));
 	    return true;
 	    case R.id.exit:

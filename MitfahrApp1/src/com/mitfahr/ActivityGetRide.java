@@ -9,6 +9,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.text.format.DateFormat;
 import android.text.method.ScrollingMovementMethod;
@@ -16,7 +17,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -38,26 +41,18 @@ public class ActivityGetRide<T> extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_getride);
+
+		Button button_search = (Button) findViewById(R.id.btn_activity_getride_go);
 		
-		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
-				this, R.layout.viewlist_adapter_rides);
-		
-		ListView listView = (ListView) findViewById(R.id.list_getRide);
-		
-		
-		for(int i = 0; i<50; i++){
-			
-			listAdapter.add("bla");
-			
-			
-		}
-		listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
-		listView.setAdapter(listAdapter);
-	
-		
-		
-		
-		
+		button_search.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+
+				Intent inte = new Intent(ActivityGetRide.this,
+						ActivityRideList.class);
+				
+				ActivityGetRide.this.startActivity(inte);
+			}
+		});
 	}
 
 	@Override
