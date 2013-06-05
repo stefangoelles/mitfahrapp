@@ -1,12 +1,22 @@
 package com.mitfahr;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.mitfahr.database.Ride;
+import com.mitfahr.database.RideModel;
+
 import android.app.ProgressDialog;
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,8 +32,10 @@ public class ActivityOwnRides extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ownrides);
 
-		try {
+		
+		
 
+	
 			new Thread(new Runnable() {
 
 				ProgressDialog progressDialog = ProgressDialog.show(
@@ -32,51 +44,13 @@ public class ActivityOwnRides extends Activity {
 				ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
 						ActivityOwnRides.this,
 						R.layout.viewlist_adapter_ownrides);
+				List<Ride> ride_list;
 
 				public void run() {
-
-					try {
-						HttpClient httpclient = new DefaultHttpClient();
-						String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
-						// TODO Beliebige Email mit UserEmail ersetzen
-						HttpGet httpget = new HttpGet(url);
-
-						ResponseHandler<String> responseHandler = new BasicResponseHandler();
-
-						String responseBody = httpclient.execute(httpget,
-								responseHandler);
-
-						// Parse
-						JSONObject json = new JSONObject(responseBody);
-						JSONArray jArray = json.getJSONArray("trips");
-
-						// Erzeugt einen ListView Eintrag
-						for (int i = 0; i < jArray.length(); i++) {
-							String trip_info = "";
-							String s = jArray.getJSONObject(i)
-									.getString("trip");
-							JSONObject jObjectTrip = new JSONObject(s);
-
-							trip_info += jObjectTrip.getString("date") + " um ";
-							trip_info += jObjectTrip.getString("time")
-									+ " Uhr\n";
-							trip_info += "von " + jObjectTrip.getString("from")
-									+ " nach ";
-							trip_info += jObjectTrip.getString("to") + "\n";
-							trip_info += "Kosten pro Person: "
-									+ jObjectTrip.getString("costs") + "\n\n";
-							trip_info += jObjectTrip.getString("aso");
-							// TODO Von datenbank werden alle attribute geholt -
-							// hier werden nicht alle eingesetzt
-
-							listAdapter.add(trip_info);
-						}
-
-					} catch (Exception e) {
-						Toast.makeText(getApplicationContext(), e.toString(),
-								Toast.LENGTH_LONG).show();
-
-					}
+	
+					ride_list = RideModel.getInstance().getRides();
+					
+			
 					runOnUiThread(new Runnable() {
 
 						@Override
@@ -84,17 +58,29 @@ public class ActivityOwnRides extends Activity {
 
 							// Find the ListView ressource
 							progressDialog.dismiss();
+							Iterator<Ride> iterator = ride_list.iterator(); 
+							
+							while(iterator.hasNext())
+							{
+								Ride ride= iterator.next();
+						
+								String ride_string = "";
+								ride_string += ride.getFrom() + " ";
+								ride_string += ride.getTo() + " ";
+								ride_string += ride.getDate() + " ";
+								ride_string += ride.getTime() + " ";
+							
+								listAdapter.add(ride_string);
+							}
 							ListView listView = (ListView) findViewById(R.id.editListView);
 							listView.setAdapter(listAdapter);
 
 						}
 					});
 
-				}
-			}).start();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			}
+	}).start();
+
 	}
 
 	@Override
