@@ -9,26 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ActivityImpressum extends Activity {
+public class ActivityStatistic extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_impressum);
+		setContentView(R.layout.activity_statistic);
 		
-		
-		Button agb = (Button) findViewById(R.id.btn_agb);
-		
-		 agb.setOnClickListener(new OnClickListener()
-		    {
-		      public void onClick(View v)
-		      {
-		    	// Intent inte = new Intent(ActivityImpressum.this, ActivityAGB.class);
-		    	  //ActivityImpressum.this.startActivity(inte);
-		    	  setContentView(R.layout.activity_agb);
-	
-		      }
-		    });
 		
 		
 		
