@@ -66,13 +66,14 @@ private RideModel(){
 			Ride ride = new Ride();
 			ride.setFrom(jObjectTrip.getString("from"));
 			ride.setTo(jObjectTrip.getString("to"));
-		//	ride.setDate(jObjectTrip.getString("date"));
-		//	ride.setTime(jObjectTrip.getTime("time"));
+			ride.setDate(jObjectTrip.getString("date"));
 			ride.setCosts(jObjectTrip.getInt("costs"));
 			ride.setAso(jObjectTrip.getString("aso"));
+			ride.setPhone(jObjectTrip.getString("phone"));
+			ride.setName(jObjectTrip.getString("name"));
+			ride.setEmail(jObjectTrip.getString("email"));
+			ride.setTime(jObjectTrip.getString("time"));
 			//ride.setFrom(jObjectTrip.getString("email")); TODO USW
-
-			
 
 			
 			

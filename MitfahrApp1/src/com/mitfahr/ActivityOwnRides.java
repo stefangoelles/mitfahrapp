@@ -40,6 +40,7 @@ public class ActivityOwnRides extends Activity {
 				ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
 						ActivityOwnRides.this,
 						R.layout.viewlist_adapter_ownrides);
+				List<Ride> ride_list;
 
 				public void run() {
 
@@ -47,25 +48,8 @@ public class ActivityOwnRides extends Activity {
 	
 							
 							
-					List<Ride> ride_list = RideModel.getInstance().getRides();
+					ride_list = RideModel.getInstance().getRides();
 					
-					Iterator<Ride> iterator = ride_list.iterator(); 
-					
-					while(iterator.hasNext())
-					{
-						Ride ride= iterator.next();
-				
-						String ride_string = "";
-						ride_string += ride.getFrom();
-						ride_string += ride.getTo();
-						ride_string += ride.getDate();
-					
-						listAdapter.add(ride_string);
-					}
-							
-							
-							
-				
 			
 					runOnUiThread(new Runnable() {
 
@@ -74,6 +58,20 @@ public class ActivityOwnRides extends Activity {
 
 							// Find the ListView ressource
 							progressDialog.dismiss();
+							Iterator<Ride> iterator = ride_list.iterator(); 
+							
+							while(iterator.hasNext())
+							{
+								Ride ride= iterator.next();
+						
+								String ride_string = "";
+								ride_string += ride.getFrom() + " ";
+								ride_string += ride.getTo() + " ";
+								ride_string += ride.getDate() + " ";
+								ride_string += ride.getTime() + " ";
+							
+								listAdapter.add(ride_string);
+							}
 							ListView listView = (ListView) findViewById(R.id.editListView);
 							listView.setAdapter(listAdapter);
 
