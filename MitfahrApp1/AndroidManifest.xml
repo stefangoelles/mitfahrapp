@@ -56,8 +56,7 @@
             android:windowSoftInputMode="stateAlwaysVisible" >
         </activity>
         <activity
-            android:name="com.mitfahr.ActivityRideList"
-            android:label="@string/title_activity_activity_ride_list" >
+            android:name="com.mitfahr.ActivityRideList">
         </activity>
     </application>
 

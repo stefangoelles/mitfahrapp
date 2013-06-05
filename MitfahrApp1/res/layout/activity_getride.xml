@@ -54,12 +54,11 @@
          android:layout_height="wrap_content"
          android:layout_alignLeft="@+id/txt_getRide_from"
          android:layout_below="@+id/txt_getRide_from"
-         android:ems="10"
-<<<<<<< HEAD
-         android:hint="bis" />
-=======
-         android:hint="bis"
-          />
+         android:ems="10">
+         
+     </EditText>
+
+        
       
 
      <ListView
@@ -73,7 +72,7 @@
          >
            <requestFocus />
      </ListView>
->>>>>>> ecfff0032435e98efbbf2a46a21de1366e302424
+
 
      <Button
          android:id="@+id/btn_activity_getride_go"
