@@ -154,11 +154,14 @@ public class RideModel {
 		
 	}
 	
-	public void insertRides(Ride ride)
+	public boolean insertRides(Ride ride)
 	{
+		
+		
 		
 		try {
 
+			
 			
 			HttpClient httpclient = new DefaultHttpClient();
 			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
@@ -171,14 +174,23 @@ public class RideModel {
 			String responseBody = httpclient.execute(httpget,
 					responseHandler);
 
+			
+			if (responseBody == "Kein email Parameter" || responseBody == "query_error")
+			{
+				return false;
+			}else
+			{
+				return true;
+			}
 			//TODO response from server handling
 
-			
+	
 				
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 			
 			
 	}
