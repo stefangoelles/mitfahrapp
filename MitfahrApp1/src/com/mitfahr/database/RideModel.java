@@ -5,6 +5,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class RideModel {
 
 private static RideModel instance; 
@@ -31,6 +39,53 @@ private RideModel(){
 	
 	public List<Ride> getRides()
 	{
+		try {
+		
+		HttpClient httpclient = new DefaultHttpClient();
+		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
+		// TODO Beliebige Email mit UserEmail ersetzen
+		HttpGet httpget = new HttpGet(url);
+
+		ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+		String responseBody = httpclient.execute(httpget,
+				responseHandler);
+
+		// Parse
+		JSONObject json = new JSONObject(responseBody);
+		JSONArray jArray = json.getJSONArray("trips");
+
+		// Erzeugt einen ListView Eintrag
+		for (int i = 0; i < jArray.length(); i++) {
+			
+			String trip_info = "";
+			String s = jArray.getJSONObject(i)
+					.getString("trip");
+			JSONObject jObjectTrip = new JSONObject(s);
+
+			Ride ride = new Ride();
+			ride.setFrom(jObjectTrip.getString("from"));
+			ride.setTo(jObjectTrip.getString("to"));
+		//	ride.setDate(jObjectTrip.getString("date"));
+		//	ride.setTime(jObjectTrip.getTime("time"));
+			ride.setCosts(jObjectTrip.getInt("costs"));
+			ride.setAso(jObjectTrip.getString("aso"));
+			//ride.setFrom(jObjectTrip.getString("email")); TODO USW
+
+			
+
+			
+			
+			rideen.add(ride);
+			
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+		
+		
+		
 		return rideen;
 	}
 	

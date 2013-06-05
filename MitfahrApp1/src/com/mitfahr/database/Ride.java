@@ -36,6 +36,9 @@ public class Ride {
 		this.time = new String(hour + ":" + minute);
 	}
 	
+	public Ride()
+	{};
+	
 	public Ride(int ID,String from, String to, int year, int month, int day, int costs, String aso,
 			String phone, String name, String email, int hour, int minute) {
 		super();
