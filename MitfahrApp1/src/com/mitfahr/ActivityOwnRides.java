@@ -8,6 +8,9 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,7 +34,8 @@ public class ActivityOwnRides extends Activity {
 
 		
 		
-		
+
+	
 			new Thread(new Runnable() {
 
 				ProgressDialog progressDialog = ProgressDialog.show(
@@ -43,11 +47,7 @@ public class ActivityOwnRides extends Activity {
 				List<Ride> ride_list;
 
 				public void run() {
-
 	
-	
-							
-							
 					ride_list = RideModel.getInstance().getRides();
 					
 			

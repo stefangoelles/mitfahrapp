@@ -17,13 +17,13 @@ public class Ride {
 	private String name = null;
 	private String email = null;
 	private String time = null;
-	
+	private int seats = 0;
 	
 	
 	
 	
 	public Ride(String from, String to, int year, int month, int day, int costs, String aso,
-			String phone, String name, String email, int hour, int minute) {
+			String phone, String name, String email, int hour, int minute, int seats) {
 		super();
 		this.date = date_format.format(new Date(year-1900, month-1, day));
 		this.from = from;
@@ -34,13 +34,14 @@ public class Ride {
 		this.name = name;
 		this.email = email;
 		this.time = new String(hour + ":" + minute);
+		this.seats = seats;
 	}
 	
 	public Ride()
 	{};
 	
 	public Ride(int ID,String from, String to, int year, int month, int day, int costs, String aso,
-			String phone, String name, String email, int hour, int minute) {
+			String phone, String name, String email, int hour, int minute, int seats) {
 		super();
 		this.ID = ID;
 		this.date = date_format.format(new Date(year-1900, month-1, day));
@@ -52,6 +53,7 @@ public class Ride {
 		this.name = name;
 		this.email = email;
 		this.time = new String(hour + ":" + minute);
+		this.seats = seats;
 	}
 
 
@@ -61,13 +63,20 @@ public class Ride {
 	public String getFrom() {
 		return from;
 	}
+
+	public int getID() {
+		return ID;
+	}
+	
 	
 	public void setID(int value){
 		this.ID = value;
 	}
 
 
-
+	public int getSeats() {
+		return seats;
+	}
 
 
 	public void setFrom(String from) {

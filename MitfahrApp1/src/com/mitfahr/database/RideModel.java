@@ -10,6 +10,9 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -40,7 +43,12 @@ private RideModel(){
 	public List<Ride> getRides()
 	{
 		try {
+			
+	//	http://www.zauberbox.at/mitfahrapp/rest.php?function=update&ID=8&from=Irgendwo&to=Vienna&date=2013-05-11&costs=12&aso=nix&phone=0650&name=Richi&email=test@test.test&time=00:00:00&seats=3
 		
+			deleteRides(new Ride(12, "xxxxx","dddd", 1999, 2, 4, 5555, "sssss", "3434343", "sssss", "test@test.test", 44, 33, 22));
+			//TODOOOOOOOOOOOO!!!!! löschen
+			
 		HttpClient httpclient = new DefaultHttpClient();
 		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
 		// TODO Beliebige Email mit UserEmail ersetzen
@@ -90,7 +98,32 @@ private RideModel(){
 		return rideen;
 	}
 	
-	public void editRides(int ID){
+	public void editRides(Ride ride){
+		
+		
+		try {
+
+			HttpClient httpclient = new DefaultHttpClient();
+			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=update&ID=" + ride.getID() + "&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
+			// TODO Beliebige Email mit UserEmail ersetzen
+			
+			HttpGet httpget = new HttpGet(url);
+
+			ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+			String responseBody = httpclient.execute(httpget,
+					responseHandler);
+
+			//TODO response from server handling
+
+			
+				
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+			
 		
 	}
 	
@@ -98,9 +131,58 @@ private RideModel(){
 		
 	}
 	
+	public void deleteRides(Ride ride)
+	{
+		try {
+		HttpClient httpclient = new DefaultHttpClient();
+		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=delete&ID=" + ride.getID();
+		// TODO Beliebige Email mit UserEmail ersetzen
+		
+		HttpGet httpget = new HttpGet(url);
+
+		ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+		String responseBody = httpclient.execute(httpget,
+				responseHandler);
+
+		//TODO response from server handling
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+		
+	}
+	
 	public void insertRides(Ride ride)
 	{
-		rideen.add(ride);
+		
+		try {
+
+			
+			HttpClient httpclient = new DefaultHttpClient();
+			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
+			// TODO Beliebige Email mit UserEmail ersetzen
+			
+			HttpGet httpget = new HttpGet(url);
+
+			ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+			String responseBody = httpclient.execute(httpget,
+					responseHandler);
+
+			//TODO response from server handling
+
+			
+				
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+			
+	
 	}
 	
 	public List<Ride> getRides(String from, String to, int year, int month, int day, int costs, String aso, 
@@ -140,3 +222,4 @@ private RideModel(){
 }
 	
 }
+
