@@ -52,23 +52,11 @@
          android:layout_below="@+id/txt_getRide_from"
          android:ems="10"
          android:hint="bis" />
-      
-
-     <ListView
-         android:id="@+id/list_getRide"
-         android:layout_width="match_parent"
-         android:layout_height="220dp"
-         android:layout_alignLeft="@+id/txt_getRide_date"
-         android:layout_alignParentBottom="true"
-         android:clipToPadding="false"
-         android:fitsSystemWindows="false" >
-     </ListView>
 
      <Button
          android:id="@+id/btn_activity_getride_go"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignRight="@+id/list_getRide"
          android:layout_below="@+id/txt_getRide_time"
          android:layout_marginTop="14dp"
          android:text="Suchen" />
