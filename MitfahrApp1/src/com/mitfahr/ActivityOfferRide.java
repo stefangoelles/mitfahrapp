@@ -1,5 +1,7 @@
 package com.mitfahr;
 
+import com.mitfahr.database.Ride;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,6 +22,13 @@ public class ActivityOfferRide extends Activity {
 	private Integer seats;
 	private String desc;
 	private String date;
+	private int costs;
+	private String phone;
+	private String name;
+	private String email;
+	private int hour;
+	private int minute;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +64,7 @@ public class ActivityOfferRide extends Activity {
 
 				} catch (Exception E) {
 					Toast.makeText(v.getContext(),
-							"Sitzplätze dürfen nicht leer sein",
+							"Sitzpl��tze d��rfen nicht leer sein",
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -71,7 +80,7 @@ public class ActivityOfferRide extends Activity {
 				if (from.length() < 1 || to.length() < 1 || date.length() < 1
 						|| time.length() < 1 || seats.equals(null)) {
 					Toast.makeText(v.getContext(),
-							"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT)
+							"Bitte alle Felder ausf��llen!", Toast.LENGTH_SHORT)
 							.show();
 				}
 
@@ -97,6 +106,12 @@ public class ActivityOfferRide extends Activity {
 					inte.putExtra("seats", seats.toString());
 					inte.putExtra("desc", desc);
 
+					
+					int dateParts[] = Utils.getInstance().splitDate(date);
+					
+					Ride ride = new Ride(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute, seats);
+					
+					
 					ActivityOfferRide.this.startActivity(inte);
 				}
 			}
@@ -107,7 +122,7 @@ public class ActivityOfferRide extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_trip, menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
 		return true;
 	}
 

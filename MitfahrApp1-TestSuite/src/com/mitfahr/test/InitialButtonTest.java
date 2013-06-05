@@ -35,9 +35,6 @@ public class InitialButtonTest extends
 
 	public void testAddRemove() {
 		
-solo.clickOnImage(4);
-solo.assertCurrentActivity("Impressum Test", ActivityImpressum.class);
-
 solo.clickOnImage(3);
 solo.assertCurrentActivity("Get Ride Test", ActivityGetRide.class);
 
