@@ -3,6 +3,7 @@ package com.mitfahr.test;
 import junit.framework.Assert;
 
 import com.mitfahr.DateValidator;
+
 import com.mitfahr.database.Ride;
 import com.mitfahr.database.RideModel;
 
@@ -28,7 +29,7 @@ public class OfferRideTest extends AndroidTestCase
 		int hour = 5;
 		int minute = 5;
 		
-		Ride ride = new Ride(from, to, year, month, day, costs, aso, phone, name, email, hour, minute);
+		Ride ride = new Ride(from, to, year, month, day, costs, aso, phone, name, email, hour, minute); 
 		boolean result = RideModel.getInstance().insertRides(ride);
 		
 		
