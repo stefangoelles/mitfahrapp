@@ -3,12 +3,25 @@
     android:id="@+id/activity_trip"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:measureWithLargestChild="true"
+    android:orientation="vertical"
+    android:scrollbars="horizontal" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.63" >
+        android:layout_weight="0.63">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical" >
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/txt_activityOfferride_date"
@@ -71,10 +84,7 @@
             android:layout_marginBottom="22dp"
             android:ems="10"
             android:hint="Beschreibung: "
-            android:inputType="textMultiLine" >
-
-            <requestFocus />
-        </EditText>
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/txt_activityOfferride_size"
@@ -86,7 +96,6 @@
             android:ems="10"
             android:hint="Plätze:"
             android:inputType="number" />
-
     </RelativeLayout>
 
 </LinearLayout>
