@@ -174,6 +174,8 @@ public class RideModel {
 			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
 			// TODO Beliebige Email mit UserEmail ersetzen
 			
+			Log.d("testing", "String " + url);
+			
 			Log.d("testing", "Before HTTP GET");
 			HttpGet httpget = new HttpGet(url);
 			Log.d("testing", "After HTTP GET " + httpget.toString());

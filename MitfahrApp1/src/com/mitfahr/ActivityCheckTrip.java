@@ -89,7 +89,7 @@ public class ActivityCheckTrip extends Activity {
             	Log.d("testing", "Test check from " + time[0]);
             	Log.d("testing", "Test check from " + time[1]);*/
             	Log.d("testing","Test check form " + Integer.parseInt(check_seats));
-            	RideModel.getInstance().insertRides(new Ride(check_from, check_to, date[2],date[1], date[0], 0, check_desc, phoneNumber, "", "", time[0], time[1], Integer.parseInt(check_seats)));
+            	RideModel.getInstance().insertRides(new Ride(check_from, check_to, date[2],date[1], date[0], 0, check_desc, phoneNumber, "Hans Juergen", "test.test@test.at@", time[0], time[1], Integer.parseInt(check_seats)));
             	Log.d("testing", "after insert Rides ");
             	
             	//close activity
