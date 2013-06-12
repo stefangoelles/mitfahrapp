@@ -22,50 +22,62 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int image=0x7f020001;
+        public static final int ic_logo=0x7f020001;
+        public static final int ic_tab_about=0x7f020002;
+        public static final int ic_tab_create=0x7f020003;
+        public static final int ic_tab_home=0x7f020004;
+        public static final int ic_tab_search=0x7f020005;
+        public static final int icon_about_config=0x7f020006;
+        public static final int icon_create_config=0x7f020007;
+        public static final int icon_home_config=0x7f020008;
+        public static final int icon_search_config=0x7f020009;
+        public static final int image=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f08001e;
-        public static final int activity_trip=0x7f080015;
-        public static final int btn_agb=0x7f080008;
-        public static final int btn_check_trip_store=0x7f080006;
-        public static final int btn_info=0x7f08000a;
-        public static final int btn_ownrides=0x7f080009;
-        public static final int btn_ride=0x7f08000b;
-        public static final int btn_trip=0x7f08000c;
-        public static final int btn_weiter=0x7f08001d;
-        public static final int editListView=0x7f08000f;
-        public static final int editText1=0x7f080007;
-        public static final int fld_welcome=0x7f08000e;
-        public static final int fld_welcome_vertikal=0x7f08000d;
-        public static final int lbl_check_trip_date=0x7f080002;
-        public static final int lbl_check_trip_desc=0x7f080004;
-        public static final int lbl_check_trip_from=0x7f080000;
-        public static final int lbl_check_trip_seats=0x7f080005;
-        public static final int lbl_check_trip_time=0x7f080003;
-        public static final int lbl_check_trip_to=0x7f080001;
-        public static final int list_ride=0x7f080014;
-        public static final int txt_beschreibung=0x7f080018;
-        public static final int txt_bis=0x7f080017;
-        public static final int txt_date=0x7f080016;
-        public static final int txt_ride_bis=0x7f080011;
-        public static final int txt_ride_date=0x7f080012;
-        public static final int txt_ride_time=0x7f080013;
-        public static final int txt_ride_von=0x7f080010;
-        public static final int txt_size=0x7f080019;
-        public static final int txt_time=0x7f08001a;
-        public static final int txt_trip_bis=0x7f08001c;
-        public static final int txt_trip_von=0x7f08001b;
+        public static final int about=0x7f08001f;
+        public static final int action_settings=0x7f08001b;
+        public static final int activity_trip=0x7f080011;
+        public static final int btn_activityOfferride_next=0x7f080017;
+        public static final int btn_activity_getride_go=0x7f08000c;
+        public static final int btn_agb=0x7f08000d;
+        public static final int btn_checkTrip_store=0x7f080006;
+        public static final int create_new=0x7f08001d;
+        public static final int editListView=0x7f08001a;
+        public static final int editText1=0x7f08000e;
+        public static final int exit=0x7f080021;
+        public static final int file=0x7f08001c;
+        public static final int lbl_checkTrip_date=0x7f080002;
+        public static final int lbl_checkTrip_desc=0x7f080004;
+        public static final int lbl_checkTrip_from=0x7f080000;
+        public static final int lbl_checkTrip_seats=0x7f080005;
+        public static final int lbl_checkTrip_time=0x7f080003;
+        public static final int lbl_checkTrip_to=0x7f080001;
+        public static final int list_getRide=0x7f08000b;
+        public static final int open=0x7f08001e;
+        public static final int statistics=0x7f080020;
+        public static final int textView1=0x7f08000f;
+        public static final int textView2=0x7f080010;
+        public static final int txt_activityOfferride_date=0x7f080012;
+        public static final int txt_activityOfferride_desc=0x7f080018;
+        public static final int txt_activityOfferride_from=0x7f080015;
+        public static final int txt_activityOfferride_size=0x7f080019;
+        public static final int txt_activityOfferride_time=0x7f080014;
+        public static final int txt_activityOfferride_to=0x7f080013;
+        public static final int txt_getRide_date=0x7f080008;
+        public static final int txt_getRide_from=0x7f080007;
+        public static final int txt_getRide_time=0x7f08000a;
+        public static final int txt_getRide_to=0x7f080009;
+        public static final int txt_trip_bis=0x7f080016;
     }
     public static final class layout {
         public static final int activity_agb=0x7f030000;
         public static final int activity_check_trip=0x7f030001;
-        public static final int activity_impressum=0x7f030002;
-        public static final int activity_main_window=0x7f030003;
-        public static final int activity_own_trips=0x7f030004;
-        public static final int activity_ownrides=0x7f030005;
-        public static final int activity_ride=0x7f030006;
-        public static final int activity_trip=0x7f030007;
+        public static final int activity_getride=0x7f030002;
+        public static final int activity_impressum=0x7f030003;
+        public static final int activity_main_window=0x7f030004;
+        public static final int activity_offerride=0x7f030005;
+        public static final int activity_own_trips=0x7f030006;
+        public static final int activity_ownrides=0x7f030007;
         public static final int viewlist_adapter_ownrides=0x7f030008;
         public static final int viewlist_adapter_rides=0x7f030009;
     }
@@ -80,17 +92,22 @@ public final class R {
         public static final int activity_trip=0x7f070007;
         public static final int impressum=0x7f070008;
         public static final int main_window=0x7f070009;
+        public static final int menu=0x7f07000a;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
-        public static final int title_activity_activity_ceck_trip=0x7f050007;
-        public static final int title_activity_activity_check_input=0x7f050006;
-        public static final int title_activity_activity_check_trip=0x7f050008;
-        public static final int title_activity_activity_ownrides=0x7f050005;
-        public static final int title_activity_activity_ride=0x7f050004;
-        public static final int title_activity_activity_trip=0x7f050003;
+        public static final int create_new=0x7f050004;
+        public static final int file=0x7f050002;
+        public static final int hello_world=0x7f050006;
+        public static final int open=0x7f050003;
+        public static final int title=0x7f050005;
+        public static final int title_activity_activity_ceck_trip=0x7f05000b;
+        public static final int title_activity_activity_check_input=0x7f05000a;
+        public static final int title_activity_activity_check_trip=0x7f05000c;
+        public static final int title_activity_activity_ownrides=0x7f050009;
+        public static final int title_activity_activity_ride=0x7f050008;
+        public static final int title_activity_activity_trip=0x7f050007;
     }
     public static final class style {
         /** 

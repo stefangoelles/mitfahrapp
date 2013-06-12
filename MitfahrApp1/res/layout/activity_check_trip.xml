@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="40dp"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_alignRight="@+id/lbl_checkTrip_from"
         android:layout_below="@+id/lbl_checkTrip_from"
         android:layout_marginTop="30dp"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_alignRight="@+id/lbl_checkTrip_to"
         android:layout_below="@+id/lbl_checkTrip_to"
         android:layout_marginTop="25dp"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/lbl_checkTrip_date"
         android:layout_centerVertical="true"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -55,7 +55,7 @@
         android:layout_alignLeft="@+id/lbl_checkTrip_time"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="84dp"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -65,7 +65,7 @@
         android:layout_alignRight="@+id/lbl_checkTrip_time"
         android:layout_below="@+id/lbl_checkTrip_time"
         android:layout_marginTop="31dp"
-        android:text="Large Text"
+        android:text=" "
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -76,6 +76,6 @@
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="43dp"
         android:layout_toRightOf="@+id/lbl_checkTrip_desc"
-        android:text="Button" />
+        android:text="OK" />
 
 </RelativeLayout>

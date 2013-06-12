@@ -160,24 +160,36 @@ List<Ride> rideen = new ArrayList<Ride>();
 	public boolean insertRides(Ride ride)
 	{
 		
+		Log.d("testing", "Insert Rides");
+    	Log.d("testing", "From: " + ride.getFrom());
+    	Log.d("testing", "To: " + ride.getTo());
+    	Log.d("testing", "Date : " + ride.getDate());
+    	Log.d("testing", "Costs : " + ride.getCosts());
+    	Log.d("testing", "ASO : " + ride.getAso());
+    	Log.d("testing", "Phone" + ride.getPhone());
+    	Log.d("testing", "Name:  " +ride.getName());
+    	Log.d("testing", "Time:  " + ride.getTime());
+    	Log.d("testing", "Email:  " + ride.getEmail());
+    	Log.d("testing", "Seats : " + ride.getSeats());
 		
-		
-		try {
-
-			
-			
+		try {	
 			HttpClient httpclient = new DefaultHttpClient();
 			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
 			// TODO Beliebige Email mit UserEmail ersetzen
 			
+			Log.d("testing", "Before HTTP GET");
 			HttpGet httpget = new HttpGet(url);
-
+			Log.d("testing", "After HTTP GET " + httpget.toString());
+        	
 			ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
 			String responseBody = httpclient.execute(httpget,
 					responseHandler);
-
 			
+			Log.d("testing", "Response Body: " + responseBody);
+        	
+
+			//Log.d("testing",responseBody);
 			if (responseBody == "Kein email Parameter" || responseBody == "query_error")
 			{
 				return false;
