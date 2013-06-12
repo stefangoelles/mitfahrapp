@@ -19,8 +19,8 @@ public class OfferRideTest extends AndroidTestCase
 		String from = "Daham";
 		String to = "UNITAET";
 		int year = 2013;
-		int month = 5;
-		int day = 29;
+		int month = 6;
+		int day = 11;
 		int costs = 300;
 		String aso = "blablabla";
 		String phone = "321654321";

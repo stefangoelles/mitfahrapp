@@ -58,10 +58,10 @@ dummy = (EditText) solo.getView(R.id.txt_activityOfferride_to);
 solo.enterText(dummy, "asdfasdf");
 
 dummy = (EditText) solo.getView(R.id.txt_activityOfferride_date);
-solo.enterText(dummy, "12.12.2012");
+solo.enterText(dummy, "12.06.2013");
 
 dummy = (EditText) solo.getView(R.id.txt_activityOfferride_time);
-solo.enterText(dummy, "12:00");
+solo.enterText(dummy, "10:00");
 
 dummy = (EditText) solo.getView(R.id.txt_activityOfferride_size);
 solo.enterText(dummy, "3");
