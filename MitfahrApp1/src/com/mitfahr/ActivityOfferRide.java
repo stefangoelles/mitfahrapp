@@ -44,28 +44,13 @@ public class ActivityOfferRide extends Activity {
 						ActivityCheckTrip.class);
 				try {
 
-					final EditText m_edit_from = (EditText) findViewById(R.id.txt_activityOfferride_from);
-					from = m_edit_from.getText().toString();
+					Log.d("fail","fail");
 
-					final EditText m_edit_to = (EditText) findViewById(R.id.txt_activityOfferride_to);
-					to = m_edit_to.getText().toString();
+				}
 
-					final EditText m_edit_date = (EditText) findViewById(R.id.txt_activityOfferride_date);
-					date = m_edit_date.getText().toString();
+catch (Exception E) {
+	Log.d("catch","fail");
 
-					final EditText m_edit_time = (EditText) findViewById(R.id.txt_activityOfferride_time);
-					time = m_edit_time.getText().toString();
-
-					final EditText m_edit_seats = (EditText) findViewById(R.id.txt_activityOfferride_size);
-					seats = Integer.parseInt(m_edit_seats.getText().toString());
-
-					final EditText m_edit_desc = (EditText) findViewById(R.id.txt_activityOfferride_desc);
-					desc = m_edit_desc.getText().toString();
-
-				} catch (Exception E) {
-					Toast.makeText(v.getContext(),
-							"Sitzplätze dürfen nicht leer sein",
-							Toast.LENGTH_SHORT).show();
 				}
 
 				Log.d("DEBUG ActivityTrip: from", from);
@@ -75,7 +60,7 @@ public class ActivityOfferRide extends Activity {
 				Log.d("DEBUG ActivityTrip: seats", seats.toString());
 				Log.d("DEBUG ActivityTrip: desc", desc);
 
-				DateValidator val = new DateValidator();
+		DateValidator val = new DateValidator();
 
 				if (from.length() < 1 || to.length() < 1 || date.length() < 1
 						|| time.length() < 1 || seats.equals(null)) {
