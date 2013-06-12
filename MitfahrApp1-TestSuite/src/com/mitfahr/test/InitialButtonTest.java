@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 import com.jayway.android.robotium.solo.Solo;
+import com.mitfahr.ActivityCheckTrip;
 import com.mitfahr.ActivityImpressum;
 import com.mitfahr.ActivityOwnRides;
 import com.mitfahr.ActivityGetRide;
@@ -15,6 +16,9 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
+import android.widget.EditText;
+
+import com.mitfahr.R;
 
 public class InitialButtonTest extends
 		ActivityInstrumentationTestCase2<MainWindow> {
@@ -41,8 +45,42 @@ solo.assertCurrentActivity("Get Ride Test", ActivityGetRide.class);
 solo.clickOnImage(2);
 solo.assertCurrentActivity("Offer Ride Test", ActivityOfferRide.class);
 
+solo.clickOnButton("Weiter");
+solo.assertCurrentActivity("Own Rides Test Btn Weiter No entrys", ActivityOfferRide.class);
+
+//------------------------------------------------------------------------
+//entering text!
+
+EditText dummy = (EditText) solo.getView(R.id.txt_activityOfferride_from);
+solo.enterText(dummy, "Graz");
+
+dummy = (EditText) solo.getView(R.id.txt_activityOfferride_to);
+solo.enterText(dummy, "asdfasdf");
+
+dummy = (EditText) solo.getView(R.id.txt_activityOfferride_date);
+solo.enterText(dummy, "12.12.2012");
+
+dummy = (EditText) solo.getView(R.id.txt_activityOfferride_time);
+solo.enterText(dummy, "12:00");
+
+dummy = (EditText) solo.getView(R.id.txt_activityOfferride_size);
+solo.enterText(dummy, "3");
+
+dummy = (EditText) solo.getView(R.id.txt_activityOfferride_desc);
+solo.enterText(dummy, "hallohallo");
+
+//------------------------------------------------------------------------
+
+solo.clickOnButton("Weiter");
+solo.assertCurrentActivity("Own Rides Test Btn Weiter No entrys", ActivityCheckTrip.class);
+
+solo.goBack();
+solo.goBack();
+
 solo.clickOnImage(1);
 solo.assertCurrentActivity("Own Rides Test", ActivityOwnRides.class);
+
+
 		//solo.pressMenuItem(1);
 		//assertTrue("fail", solo.searchText("Fahrt"));
 		//solo.pressMenuItem(2);
