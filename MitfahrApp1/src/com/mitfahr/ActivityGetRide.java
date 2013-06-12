@@ -29,7 +29,7 @@ import android.widget.TextView;
 public class ActivityGetRide<T> extends Activity 
 {
 	private String from = "Graz";
-	private String to = "Tiol";
+	private String to = "Tirol";
 	private static Date date;
 	private Date time;
 	private ArrayAdapter<String> array_ride;
@@ -50,7 +50,37 @@ public class ActivityGetRide<T> extends Activity
 				Intent inte = new Intent(ActivityGetRide.this,
 						ActivityRideList.class);
 				
+
+				
+				
+				EditText et = (EditText) findViewById(R.id.txt_getRide_from);
+				String from = et.getText().toString();
+				
+				EditText et2 = (EditText) findViewById(R.id.txt_getRide_to);
+				String to = et2.getText().toString();
+
+				EditText et3 = (EditText) findViewById(R.id.txt_getRide_date);
+				String date = et3.getText().toString();
+				
+				EditText et4 = (EditText) findViewById(R.id.txt_getRide_time);
+				String time = et4.getText().toString();
+				
+				
+				inte.putExtra("from", from);
+				inte.putExtra("to", to);
+				inte.putExtra("date", date);
+				inte.putExtra("time", time);
+				
 				ActivityGetRide.this.startActivity(inte);
+				
+				
+				/*
+				
+				//TODO daten von view id an RideList übergeben
+				Intent i = new Intent(this, ActivityRideList.class);
+				
+				*/
+				
 			}
 		});
 	}
