@@ -10,8 +10,12 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 
 import android.util.Log;
 
@@ -35,70 +39,162 @@ public class RideModel {
 		return instance;
 	}
 
-	public List<Ride> getRides() {
+		
+	
+	public List<Ride> getRides()
+	{
+		try {
+			
 
+			
+		HttpClient httpclient = new DefaultHttpClient();
+		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
+		// TODO Beliebige Email mit UserEmail ersetzen
+		HttpGet httpget = new HttpGet(url);
+
+		ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+		String responseBody = httpclient.execute(httpget,
+				responseHandler);
+
+		// Parse
+		JSONObject json = new JSONObject(responseBody);
+		JSONArray jArray = json.getJSONArray("trips");
+
+		// Erzeugt einen ListView Eintrag
+		for (int i = 0; i < jArray.length(); i++) {
+			
+			String trip_info = "";
+			String s = jArray.getJSONObject(i)
+					.getString("trip");
+			JSONObject jObjectTrip = new JSONObject(s);
+
+			Ride ride = new Ride();
+			ride.setFrom(jObjectTrip.getString("from"));
+			ride.setTo(jObjectTrip.getString("to"));
+			ride.setDate(jObjectTrip.getString("date"));
+			ride.setCosts(jObjectTrip.getInt("costs"));
+			ride.setAso(jObjectTrip.getString("aso"));
+			ride.setPhone(jObjectTrip.getString("phone"));
+			ride.setName(jObjectTrip.getString("name"));
+			ride.setEmail(jObjectTrip.getString("email"));
+			ride.setTime(jObjectTrip.getString("time"));
+			//ride.setFrom(jObjectTrip.getString("email")); TODO USW
+
+			
+			
+			rideen.add(ride);
+			
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+		
+		
+		
+		return rideen;
+	}
+	
+	public void editRides(Ride ride){
+		
+		
 		try {
 
 			HttpClient httpclient = new DefaultHttpClient();
-			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
+			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=update&ID=" + ride.getID() + "&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
 			// TODO Beliebige Email mit UserEmail ersetzen
+			
 			HttpGet httpget = new HttpGet(url);
 
 			ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
-			String responseBody = httpclient.execute(httpget, responseHandler);
+			String responseBody = httpclient.execute(httpget,
+					responseHandler);
 
-			// Parse
-			JSONObject json = new JSONObject(responseBody);
-			JSONArray jArray = json.getJSONArray("trips");
+			//TODO response from server handling
 
-			// Erzeugt einen ListView Eintrag
-			for (int i = 0; i < jArray.length(); i++) {
-				Ride ride = new Ride();
-				String s = jArray.getJSONObject(i).getString("trip");
-				JSONObject jObjectTrip = new JSONObject(s);
-
-			//	ride.setID(jObjectTrip.getString("ID"));
-				ride.setFrom(jObjectTrip.getString("from"));
-				ride.setTo(jObjectTrip.getString("to"));
-			//	ride.setDate(jObjectTrip.getString("date"));
-//				ride.setCosts(jObjectTrip.getInt("costs"));
-				ride.setAso(jObjectTrip.getString("aso"));
-//				ride.setPhone(jObjectTrip.getString("phone"));
-				ride.setName(jObjectTrip.getString("name"));
-				ride.setEmail(jObjectTrip.getString("email"));
-			//	ride.setTime(jObjectTrip.getString("time"));
-			//	ride.setTimestamp(jObjectTrip.getString("timestamp"));
-				ride.setSeats(jObjectTrip.getInt("seats"));
-				//TODO aussortieren...
-
+			
 				
-				rideen.add(ride);
-
-			}
+			
 		} catch (Exception e) {
-			Log.d("DEBUG RideModel:", "ERROR");
+			e.printStackTrace();
 		}
-
-		return rideen;
-	}
-
-	public void editRides(int ID) {
-
+			
+			
+	
 	}
 
 	public void getRidesbyID(int ID) {
 
 	}
 
+	
+	public void deleteRides(Ride ride)
+	{
+		try {
+		HttpClient httpclient = new DefaultHttpClient();
+		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=delete&ID=" + ride.getID();
+		// TODO Beliebige Email mit UserEmail ersetzen
+		
+		HttpGet httpget = new HttpGet(url);
 
-	public boolean insertRides(Ride ride) {
+		ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
+		String responseBody = httpclient.execute(httpget,
+				responseHandler);
 
-		rideen.add(ride);
-		return false;
-
+		//TODO response from server handling
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
 	}
+		
+		
+	}
+	
+	public boolean insertRides(Ride ride)
+	{
+		
+		
+		
+		try {
+
+			
+			
+			HttpClient httpclient = new DefaultHttpClient();
+			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
+			// TODO Beliebige Email mit UserEmail ersetzen
+			
+			HttpGet httpget = new HttpGet(url);
+
+			ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+			String responseBody = httpclient.execute(httpget,
+					responseHandler);
+
+			
+			if (responseBody == "Kein email Parameter" || responseBody == "query_error")
+			{
+				return false;
+			}else
+			{
+				return true;
+			}
+			//TODO response from server handling
+
+	
+				
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+			
+			
+	}
+
 
 	public List<Ride> getRides(String from, String to, int year, int month,
 			int day, int costs, String aso, String phone, String name,
@@ -139,3 +235,4 @@ public class RideModel {
 	}
 
 }
+

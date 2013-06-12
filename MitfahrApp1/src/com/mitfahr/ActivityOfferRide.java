@@ -16,16 +16,16 @@ import android.widget.Toast;
 public class ActivityOfferRide extends Activity {
 
 	
-	private String from;
-	private String to;
-	private String time;
-	private Integer seats;
-	private String desc;
-	private String date;
+	private String from = "";
+	private String to = "";
+	private String time = "";
+	private Integer seats = 0;
+	private String desc = "";
+	private String date = "";
 	private int costs;
-	private String phone;
-	private String name;
-	private String email;
+	private String phone = "";
+	private String name = "";
+	private String email = "";
 	private int hour;
 	private int minute;
 	
@@ -64,7 +64,7 @@ public class ActivityOfferRide extends Activity {
 
 				} catch (Exception E) {
 					Toast.makeText(v.getContext(),
-							"Sitzplätze dürfen nicht leer sein",
+							"Bitte alle Felder ausfüllen",
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -77,42 +77,43 @@ public class ActivityOfferRide extends Activity {
 
 				DateValidator val = new DateValidator();
 
-				if (from.length() < 1 || to.length() < 1 || date.length() < 1
-						|| time.length() < 1 || seats.equals(null)) {
-					Toast.makeText(v.getContext(),
-							"Bitte alle Felder ausfüllen!", Toast.LENGTH_SHORT)
-							.show();
-				}
+				if(!date.equalsIgnoreCase("") && !time.equalsIgnoreCase(""))
+				{
 
-				else if (val.isThisDateValid(date, "dd.MM.yyyy") == false) {
-					Log.d("Date not valid........", "bla");
-					Toast.makeText(v.getContext(),
-							"Bitte Datum im Format dd.MM.yyyy eingeben!",
-							Toast.LENGTH_SHORT).show();
-				}
+					if (val.isThisDateValid(date, "dd.MM.yyyy") == false) 
+					{
+						Log.d("Date not valid........", "bla");
+						Toast.makeText(v.getContext(),
+								"Bitte Datum im Format dd.MM.yyyy eingeben!",
+								Toast.LENGTH_SHORT).show();
+					}
+	
+					else if (val.isThisDateValid(time, "hh:mm") == false) 
+					{
+						Log.d("Time not valid........", "bla");
+						Toast.makeText(v.getContext(),
+								"Bitte Zeit im Format hh:mm eingeben!",
+								Toast.LENGTH_SHORT).show();
+					}
+	
+					else 
+					{
+						inte.putExtra("from", from);
+						inte.putExtra("to", to);
+						inte.putExtra("date", date);
+						inte.putExtra("time", time);
+						inte.putExtra("seats", seats.toString());
+						inte.putExtra("desc", desc);
+	
+						
+						int dateParts[] = Utils.getInstance().splitDate(date);
+						
+						Ride ride = new Ride(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute, seats);
+						
+						
+						ActivityOfferRide.this.startActivity(inte);
+					}
 
-				else if (val.isThisDateValid(time, "hh:mm") == false) {
-					Log.d("Time not valid........", "bla");
-					Toast.makeText(v.getContext(),
-							"Bitte Zeit im Format hh:mm eingeben!",
-							Toast.LENGTH_SHORT).show();
-				}
-
-				else {
-					inte.putExtra("from", from);
-					inte.putExtra("to", to);
-					inte.putExtra("date", date);
-					inte.putExtra("time", time);
-					inte.putExtra("seats", seats.toString());
-					inte.putExtra("desc", desc);
-
-					
-					int dateParts[] = Utils.getInstance().splitDate(date);
-					
-					Ride ride = new Ride(from, to, dateParts[2], dateParts[1], dateParts[0], costs, desc, phone, name, email, hour, minute);
-					
-					
-					ActivityOfferRide.this.startActivity(inte);
 				}
 			}
 		});
