@@ -156,25 +156,23 @@ public class RideModel {
 	
 	public boolean insertRides(Ride ride)
 	{
-		
-		
-		
-		try {
-
-			
-			
+		Log.d("testing", "Start insert Rides");
+    	
+		try {	
 			HttpClient httpclient = new DefaultHttpClient();
 			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=insert&from=" + ride.getFrom() + "&to=" + ride.getTo() + "&date=" + ride.getDate() + "&costs=" + ride.getCosts() + "&aso=" + ride.getAso() + "&phone=" + ride.getPhone() + "&name=" + ride.getName() + "&email=" + ride.getEmail() + "&time=" + ride.getTime() + "&seats=" + ride.getSeats();
 			// TODO Beliebige Email mit UserEmail ersetzen
 			
+			Log.d("testing", "Before HTTP GET");
 			HttpGet httpget = new HttpGet(url);
-
+			Log.d("testing", "After HTTP GET");
+        	
 			ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
 			String responseBody = httpclient.execute(httpget,
 					responseHandler);
 
-			
+			//Log.d("testing",responseBody);
 			if (responseBody == "Kein email Parameter" || responseBody == "query_error")
 			{
 				return false;
