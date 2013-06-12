@@ -1,25 +1,35 @@
 package com.mitfahr;
 
+
+
+import java.util.Date;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.*;
 
-public class ActivityRideList extends Activity {
+public class ActivityRideList extends Activity implements OnItemClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ride_list);
+		ListView listView = (ListView) findViewById(R.id.list_RideList);
+		
+			
 		
 		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
 				this, R.layout.viewlist_adapter_rides);
 		
-		ListView listView = (ListView) findViewById(R.id.list_RideList);
 		
 		
-		for(int i = 0; i<50; i++){
+	
+		for(int i = 0; i<5; i++){
 			
 			listAdapter.add("bla");
 			
@@ -27,8 +37,14 @@ public class ActivityRideList extends Activity {
 		}
 		listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
 		listView.setAdapter(listAdapter);
+		
+		listView.setFocusable(true);
+		listView.setClickable(true);
+		listView.setFocusableInTouchMode(true);
 	
+
 	}
+		
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,4 +53,12 @@ public class ActivityRideList extends Activity {
 		return true;
 	}
 
+
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		setContentView(R.layout.activity_agb);
+	}
+
+	
 }

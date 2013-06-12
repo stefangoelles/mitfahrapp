@@ -4,6 +4,7 @@ package com.mitfahr;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 import com.mitfahr.database.Ride;
 
@@ -35,6 +36,7 @@ public class ActivityOfferRide extends Activity {
 	private int hour;
 	private int minute;
 	Date test;
+	Date timeCast; 
 	
 
 	@SuppressLint("SimpleDateFormat")
@@ -44,6 +46,10 @@ public class ActivityOfferRide extends Activity {
 		setContentView(R.layout.activity_offerride);
 		
 		final SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+		final SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		final String uhrzeit = sdf.format(new Date());
 		
 		final Date today=new Date();
 		
@@ -67,6 +73,7 @@ public class ActivityOfferRide extends Activity {
 					final EditText m_edit_date = (EditText) findViewById(R.id.txt_activityOfferride_date);
 					date = m_edit_date.getText().toString();
 					
+					
 
 					final EditText m_edit_time = (EditText) findViewById(R.id.txt_activityOfferride_time);
 					time = m_edit_time.getText().toString();
@@ -77,6 +84,8 @@ public class ActivityOfferRide extends Activity {
 					final EditText m_edit_desc = (EditText) findViewById(R.id.txt_activityOfferride_desc);
 					desc = m_edit_desc.getText().toString();
 
+				
+					
 				} catch (Exception E) {
 					Toast.makeText(v.getContext(),
 							"Bitte alle Felder ausfüllen",
@@ -85,10 +94,10 @@ public class ActivityOfferRide extends Activity {
 				
 				try {
 					test=formatter.parse(date);
+					timeCast=timeFormatter.parse(time);
+					
 				} catch (ParseException e) {
-					Toast.makeText(v.getContext(),
-							"DAtum fail",
-							Toast.LENGTH_SHORT).show();
+					
 				}
 				
 
@@ -129,6 +138,17 @@ public class ActivityOfferRide extends Activity {
 								"Bitte Zeit im Format hh:mm eingeben!",
 								Toast.LENGTH_SHORT).show();
 					}
+					
+					else if (test.equals(today) == true ) 
+					{
+						if(Integer.parseInt(uhrzeit)<Integer.parseInt(time))
+						Log.d("Time not valid........", "bla");
+						Toast.makeText(v.getContext(),
+								"Uhrzeit fail",
+								Toast.LENGTH_SHORT).show();
+					}
+					
+					
 	
 					else 
 					{
