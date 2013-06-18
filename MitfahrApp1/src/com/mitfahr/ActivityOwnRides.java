@@ -20,66 +20,66 @@ import com.mitfahr.database.RideModel;
 import android.app.ProgressDialog;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
 
 public class ActivityOwnRides extends Activity {
+	
+	private String test_string = "Wien Graz 20.06.2013 11:00";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ownrides);
 
-		
-		
+		new Thread(new Runnable() {
 
-	
-			new Thread(new Runnable() {
+			ProgressDialog progressDialog = ProgressDialog.show(
+					ActivityOwnRides.this, "", "Loading. Please wait...", true);
+			ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
+					ActivityOwnRides.this, R.layout.viewlist_adapter_ownrides);
+			List<Ride> ride_list;
 
-				ProgressDialog progressDialog = ProgressDialog.show(
-						ActivityOwnRides.this, "", "Loading. Please wait...",
-						true);
-				ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(
-						ActivityOwnRides.this,
-						R.layout.viewlist_adapter_ownrides);
-				List<Ride> ride_list;
+			public void run() {
 
-				public void run() {
-	
-					ride_list = RideModel.getInstance().getRides();
-					
-			
-					runOnUiThread(new Runnable() {
+				ride_list = RideModel.getInstance().getRides();
 
-						@Override
-						public void run() {
+				runOnUiThread(new Runnable() {
 
-							// Find the ListView ressource
-							progressDialog.dismiss();
-							Iterator<Ride> iterator = ride_list.iterator(); 
-							
-							while(iterator.hasNext())
-							{
-								Ride ride= iterator.next();
-						
-								String ride_string = "";
-								ride_string += ride.getFrom() + " ";
-								ride_string += ride.getTo() + " ";
-								ride_string += ride.getDate() + " ";
-								ride_string += ride.getTime() + " ";
-							
-								listAdapter.add(ride_string);
-							}
-							ListView listView = (ListView) findViewById(R.id.editListView);
-							listView.setAdapter(listAdapter);
+					@Override
+					public void run() {
 
+						// Find the ListView ressource
+						progressDialog.dismiss();
+						Iterator<Ride> iterator = ride_list.iterator();
+
+						while (iterator.hasNext()) {
+							Ride ride = iterator.next();
+
+							String ride_string = "";
+							ride_string += ride.getFrom() + " ";
+							ride_string += ride.getTo() + " ";
+							ride_string += ride.getDate() + " ";
+							ride_string += ride.getTime() + " ";
+
+							listAdapter.add(ride_string);
 						}
-					});
+						
+						if(RideModel.getInstance().isTest()){
+							listAdapter.add(test_string);
+							Log.d("asdf", "test = true");
+						}
+						ListView listView = (ListView) findViewById(R.id.editListView);
+						listView.setAdapter(listAdapter);
+
+					}
+				});
 
 			}
-	}).start();
+		}).start();
 
 	}
 
