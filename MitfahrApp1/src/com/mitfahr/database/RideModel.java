@@ -23,10 +23,7 @@ public class RideModel {
 
 	private static RideModel instance;
 
-	// in the meantime local variables and list are used TODO: create real
-	// database connection
-	List<Ride> rideen = new ArrayList<Ride>();
-
+	
 	public RideModel() {
 
 		// put your initialization here(http url, etc)
@@ -41,11 +38,15 @@ public class RideModel {
 
 		
 	
+	
+	
+	
+	
 	public List<Ride> getRides()
 	{
 		try {
 			
-
+List<Ride> rideen = new ArrayList<Ride>();
 			
 		HttpClient httpclient = new DefaultHttpClient();
 		String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=get&format=json&email=test@test.test";
@@ -86,6 +87,8 @@ public class RideModel {
 			rideen.add(ride);
 			
 		}
+		return rideen;
+
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -93,7 +96,7 @@ public class RideModel {
 		
 		
 		
-		return rideen;
+		return null;
 	}
 	
 	public void editRides(Ride ride){
@@ -209,7 +212,7 @@ public class RideModel {
 			
 	}
 
-
+/*
 	public List<Ride> getRides(String from, String to, int year, int month,
 			int day, int costs, String aso, String phone, String name,
 			String email, int hour, int minute) {
@@ -247,6 +250,71 @@ public class RideModel {
 		return result;
 
 	}
+*/
+	
+	public List<Ride> getSearchedRides(String from, String to, String date,
+			String time) {
+		
+
+
+		
+		try {
+			
+List<Ride> rideList = new ArrayList<Ride>();
+			
+			HttpClient httpclient = new DefaultHttpClient();
+			String url = "http://www.zauberbox.at/mitfahrapp/rest.php?function=find&format=json&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time;
+			// TODO Beliebige Email mit UserEmail ersetzen
+			HttpGet httpget = new HttpGet(url);
+
+			ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+			String responseBody = httpclient.execute(httpget,
+					responseHandler);
+
+			// Parse
+			JSONObject json = new JSONObject(responseBody);
+			JSONArray jArray = json.getJSONArray("trips");
+
+			// Erzeugt einen ListView Eintrag
+			for (int i = 0; i < jArray.length(); i++) {
+				
+				String trip_info = "";
+				String s = jArray.getJSONObject(i)
+						.getString("trip");
+				JSONObject jObjectTrip = new JSONObject(s);
+
+				Ride ride = new Ride();
+				ride.setFrom(jObjectTrip.getString("from"));
+				ride.setTo(jObjectTrip.getString("to"));
+				ride.setDate(jObjectTrip.getString("date"));
+				ride.setCosts(jObjectTrip.getInt("costs"));
+				ride.setAso(jObjectTrip.getString("aso"));
+				ride.setPhone(jObjectTrip.getString("phone"));
+				ride.setName(jObjectTrip.getString("name"));
+				ride.setEmail(jObjectTrip.getString("email"));
+				ride.setTime(jObjectTrip.getString("time"));
+				//ride.setFrom(jObjectTrip.getString("email")); TODO USW
+
+				
+				
+				rideList.add(ride);
+
+
+				
+			}
+			return rideList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+				
+			
+		return null;
+		}
+		
+		
+		
 
 }
 
