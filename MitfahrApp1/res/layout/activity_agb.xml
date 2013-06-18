@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dummy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -8,17 +9,86 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ActivityAGB" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-    
-      <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="test" />
+      
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:visibility="visible" >
+        
+        
+
+        <TextView
+            android:id="@+id/pagetext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:isScrollContainer="true"
+            android:keepScreenOn="true"
+            android:scrollbars="vertical"
+            android:text=" Allgemeine Geschäftsbedingungen 
+
+MitfahrApp
+
+Stand: 5. Juni 2013 
+
+
+§ 1 Vertragsgegenstand, Geltungsbereich, Änderung 
+1. Das Team Radacher, Strauchergasse, 8020 Graz, vertreten durch den Teamleiter Lukas Radacher, stellt den Nutzern ein MitfahrApp zur Verfügung. Dieses App dient zur Veröffentlichung von Mitfahrgelegenheiten für andere nicht registrierte Benutzer. Diese können mit den Fahrern in Kontakt treten und ggf. mitfahren. Dieses App ermöglicht es ebenso eigens erstellte Fahrten zu verwalten, editieren und löschen und das finden von Mitfahrgelegenheiten zwischen den gesuchten Orten. Der Vertrieb und die Installation der App erfolgt über die eigene Internetseite und über GitHub.
+2. Die Erfassung der persönlichen Daten, die grundsätzlich für einen Schriftverkehr notwendig 
+sind, erfolgen ausschließlich lokal. Eine Registrierung ist zur Nutzung nicht erforderlich und 
+findet grundsätzlich nur im Reklamationsfall statt.
+3. Die folgenden Bedingungen regeln abschließend das Vertragsverhältnis bei der Nutzung des 
+MitfahrApps zwischen Team Radacher und dem jeweiligen Nutzer und gelten ausschließlich. Entgegenstehende oder von diesen Geschäftsbedingungen abweichende Bedingungen der Nutzer werden grundsätzlich nicht anerkannt. 
+4. Ein Anspruch auf Abschluss eines Nutzungsvertrages besteht nicht. Team Radacher behält sich vor, den Abschluss eines Nutzungsvertrages ohne Angabe von Gründen abzulehnen. 
+
+§ 2 MitfahrApp App 
+Der Download der App ist – etwaige Verbindungskosten ausgenommen – kostenlos. 
+Team Radacher behält sich vor die Anwendung für Nutzer kostenpflichtig zu machen. In diesem Falle werden die AGBs um die notwendigen Änderungen erweitert und korrigiert, welche die kostenpflichtige Lizenz erklären.
+
+§ 3 Registrierung, Zugang 
+MitfahrApp ist ohne notwendiger Registrierung zugänglich.
+
+§ 4 Leistungen des MitfahrApps
+1. Allgemeines 
+Das MitfahrApp stellt den Nutzern einer APP zur Verfügung, mit deren Hilfe die Nutzer Mitfahrende finden bzw. suchen können. MitfahrApp bietet Verfügbarkeit der Datenbank durch zauberbox.at, dadurch wird keine ständige Verfügbarkeit garantiert. Die Gründe können sich von Wartungsarbeiten des Anbieters über technische Probleme bis zu sonstige Probleme, die nicht durch Team Radacher verursacht wurde.
+Notwendige Betriebsunterbrechungen für vorbeugende Wartungsarbeiten werden frühestmöglich auf der Webseite angekündigt. akm software - VorlagenManager darf sich, soweit nichts anderes vereinbart wurde, zur Ausführung der Leistungen auch Dritter bedienen. 
+
+2. Funktionen im VorlagenManager 
+MitfahrApp stellt dem Nutzer folgende Basisfunktionen zur Verfügung: 
+ Das Finden von Mitfahrgelegenheiten, die den selben Abfahr- und Ankunftsort besitzen. 
+ Das Erstellen von eigenen Fahrten, damit Suchende diese finden können.
+ Das Verwalten der erstellten eigenen Fahrten, welche editiert und gelöscht werden können.
+Team Radacher – Übernimmt keine Garantie für das Enthalten von relevanten Datensätzen und deren Richtigkeit.
+
+§ 6 Pflichten des Nutzers 
+Der Nutzer ist verpflichtet, die Funktionen der MitfahrAPP ausschließlich für die vertragsgemäße Zwecke zu benutzen.
+
+§ 7 Vertragsdauer, Kündigung 
+Der kostenfreie Zugang auf die MitfahrApp läuft auf unbestimmte Zeit und kann jeder Zeit von beiden Parteien gekündigt bzw. geschlossen werden. Darüber hinaus wird vorbehalten die Vertragsdauer jeder Zeit ändern zu können.
+
+§ 8 Haftung 
+Team Radacher haftet nicht für vorsätzlich oder grob fahrlässig verursachte Schäden, bei arglistigem Verschweigen von Mängeln, bei Übernahme einer Beschaffenheitsgarantie, für Ansprüche aufgrund des Produkthaftungsgesetzes sowie für  Verletzung von Leben, Körper oder Gesundheit. Darüberhinaus haftet Team Radacher keinesfalls für den Mißbrauch vom Benutzer eingegebenen Daten in der Datenbank, Diskriminierungen und nicht gendergerechtes Verhalten. Vorstehende Haftungsbeschränkungen gelten auch für die Erfüllungsgehilfen von MitfahrApp.
+
+§ 9 Höhere Gewalt 
+MitfahrApp ist von der Leistungspflicht in Fällen höherer Gewalt (insbesondere Krieg, Streik und Naturkatastrophen) befreit. Als höhere Gewalt gelten auch alle unvorhergesehenen Ereignisse sowie solche Ereignisse, deren Auswirkungen auf die Vertragserfüllung von keiner Partei zu vertreten sind. Zu diesen Ereignissen zählen insbesondere rechtmäßige Arbeitskampfmaßnahmen, auch in Drittbetrieben, behördliche Maßnahmen, der Ausfall von Kommunikationsnetzen oder Gateways anderer Betreiber sowie Störungen im Bereich anderer Telekommunikations- oder Dienstanbieter. Für den Fall, dass MitfahrApp trotz aller zumutbaren Anstrengungen die geschuldete Leistung aufgrund höherer Gewalt nicht erbringen kann, ist MitfahrApp für die Dauer der Hinderung von seinen Leistungspflichten befreit. 
+
+§ 10 Datenschutz 
+Da keine Registrierung vorgenommen wird, haftet Team Radacher in keinster Weise für die vom Benutzer eingegeben Daten und auch nicht für die Richtigkeit. Es kann nicht garantiert werden, dass 3te die Daten nicht für andere Zwecke weiter verwenden, durch die öffentliche Zugänglichkeit.
+
+§ 11 Änderung der AGB 
+Diese Nutzungsbedingungen können von Team Radacher ergänzt, abgeändert oder für ungültig erklärt werden. Team Radacher behält sich vor, diese Nutzungsbedingungen jederzeit und ohne Nennung von Gründen zu ändern. Die geänderten Bedingungen werden zwei Wochen vor ihrem Inkrafttreten auf der Internetseite FEHLEND. Wenn der Nutzer innerhalb von zwei Wochen den geänderten Nutzungsbedingungen nicht ausdrücklich widersprochen hat, gelten diese als angenommen. 
+
+§ 12 Schlussbestimmungen 
+Auf die vorliegenden Geschäftsbedingungen ist ausschließlich österreichisches Recht unter Ausschluss des UN-Kaufrechts anwendbar. 
+Sofern die Parteien Vollkaufleute sind, wird für alle Streitigkeiten, die sich aus oder im Zusammenhang mit dem vorliegenden Vertrag ergeben, die Stadt des Sitzes von Team Radacher (Graz) als Gerichtsstand vereinbart. Das Recht zur Aufrechnung steht dem Nutzer nur zu, wenn seine Gegenansprüche rechtskräftig festgestellt wurden, unbestritten sind oder Team Radacher diese anerkannt hat. 
+Sollten eine oder mehrere Klauseln dieser Geschäftsbedingungen ganz oder teilweise unwirksam 
+sein, so soll hierdurch die Gültigkeit der übrigen Bestimmungen nicht berührt sein. Dieser Vertragstext wird von Team Radacher bei Vertragsschluß gespeichert und ist für den Nutzer auch nach Vertragsschluß im Rahmen der vereinbarten Verfügbarkeit der Webseite jederzeit abrufbar unter FEHLEND." />
+            
+        
+      </ScrollView>    
 
 </RelativeLayout>

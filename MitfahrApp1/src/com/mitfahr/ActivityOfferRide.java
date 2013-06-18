@@ -77,6 +77,8 @@ public class ActivityOfferRide extends Activity {
 				Log.d("DEBUG ActivityTrip: desc", desc);
 
 				DateValidator val = new DateValidator();
+			//	TimeValidator timeval = new TimeValidator();
+
 
 				if(!date.equalsIgnoreCase("") && !time.equalsIgnoreCase(""))
 				{
@@ -89,14 +91,14 @@ public class ActivityOfferRide extends Activity {
 								Toast.LENGTH_SHORT).show();
 					}
 	
-					else if (val.isThisDateValid(time, "hh:mm") == false) 
+				/*	else if (timeval.isThisTimeValid(time, "hh:mm") == false) 
 					{
 						Log.d("Time not valid........", "bla");
 						Toast.makeText(v.getContext(),
 								"Bitte Zeit im Format hh:mm eingeben!",
 								Toast.LENGTH_SHORT).show();
 					}
-	
+				*/
 					else 
 					{
 						inte.putExtra("from", from);
