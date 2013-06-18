@@ -12,70 +12,65 @@
         android:id="@+id/lbl_checkTrip_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="40dp"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/lbl_checkTrip_to"
+        android:layout_below="@+id/lbl_checkTrip_to"
+        android:layout_marginTop="38dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbl_checkTrip_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lbl_checkTrip_from"
-        android:layout_below="@+id/lbl_checkTrip_from"
-        android:layout_marginTop="30dp"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/lbl_checkTrip_date"
+        android:layout_below="@+id/lbl_checkTrip_date"
+        android:layout_marginTop="52dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbl_checkTrip_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lbl_checkTrip_to"
-        android:layout_below="@+id/lbl_checkTrip_to"
-        android:layout_marginTop="25dp"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/lbl_checkTrip_time"
+        android:layout_below="@+id/lbl_checkTrip_time"
+        android:layout_marginTop="50dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbl_checkTrip_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lbl_checkTrip_date"
-        android:layout_centerVertical="true"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="26dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbl_checkTrip_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lbl_checkTrip_time"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="84dp"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/lbl_checkTrip_from"
+        android:layout_below="@+id/lbl_checkTrip_from"
+        android:layout_marginTop="43dp"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbl_checkTrip_seats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lbl_checkTrip_time"
-        android:layout_below="@+id/lbl_checkTrip_time"
-        android:layout_marginTop="31dp"
-        android:text=" "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_above="@+id/btn_checkTrip_store"
+        android:layout_alignLeft="@+id/lbl_checkTrip_desc"
+        android:layout_marginBottom="20dp"
+        android:text="TextView" />
 
     <Button
         android:id="@+id/btn_checkTrip_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="43dp"
-        android:layout_toRightOf="@+id/lbl_checkTrip_desc"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginRight="38dp"
         android:text="OK" />
 
 </RelativeLayout>

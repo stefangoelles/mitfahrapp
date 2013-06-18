@@ -20,6 +20,8 @@ import org.json.JSONObject;
 import android.util.Log;
 
 public class RideModel {
+	
+	private boolean test = false;
 
 	private static RideModel instance;
 
@@ -36,11 +38,6 @@ public class RideModel {
 		return instance;
 	}
 
-		
-	
-	
-	
-	
 	
 	public List<Ride> getRides()
 	{
@@ -312,6 +309,14 @@ List<Ride> rideList = new ArrayList<Ride>();
 			
 		return null;
 		}
+
+	public boolean isTest() {
+		return test;
+	}
+
+	public void setTest(boolean test) {
+		this.test = test;
+	}
 		
 		
 		

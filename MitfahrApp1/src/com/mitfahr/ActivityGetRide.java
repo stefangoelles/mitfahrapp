@@ -50,8 +50,6 @@ public class ActivityGetRide<T> extends Activity
 				Intent inte = new Intent(ActivityGetRide.this,
 						ActivityRideList.class);
 				
-
-				
 				
 				EditText et = (EditText) findViewById(R.id.txt_getRide_from);
 				String from = et.getText().toString();

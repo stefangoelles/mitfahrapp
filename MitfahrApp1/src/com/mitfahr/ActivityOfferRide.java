@@ -116,6 +116,7 @@ public class ActivityOfferRide extends Activity {
 					}
 
 				}
+				finish();
 			}
 		});
 
